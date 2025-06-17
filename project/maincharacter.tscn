@@ -164,12 +164,14 @@ size = Vector2(57, 60)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_0aigr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite2d" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(16, 20)
-scale = Vector2(2.41667, 2.35417)
+scale = Vector2(5.78857, 4.75255)
 sprite_frames = SubResource("SpriteFrames_rrgcq")
-animation = &"right_run"
+animation = &"front_run"
+autoplay = "right_run"
+frame_progress = 0.792314
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18.5, 20)
