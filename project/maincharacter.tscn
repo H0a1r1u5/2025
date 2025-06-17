@@ -169,9 +169,15 @@ texture_filter = 1
 position = Vector2(16, 20)
 scale = Vector2(5.78857, 4.75255)
 sprite_frames = SubResource("SpriteFrames_rrgcq")
+<<<<<<< Updated upstream
 animation = &"front_run"
 autoplay = "right_run"
 frame_progress = 0.792314
+=======
+animation = &"right_default"
+autoplay = "right_run"
+frame_progress = 0.478553
+>>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18.5, 20)

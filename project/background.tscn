@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://diucn63le48gp"]
+[gd_scene load_steps=6 format=3 uid="uid://diucn63le48gp"]
 
 [ext_resource type="PackedScene" uid="uid://dbkg1gh2fi0n" path="res://maincharacter.tscn" id="1_i7s6n"]
 [ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="2_xehqc"]
+
+[sub_resource type="FontFile" id="FontFile_i7s6n"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xehqc"]
+font = SubResource("FontFile_i7s6n")
+font_size = 8
+font_color = Color(0.099986, 0.099986, 0.099986, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7s6n"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,8 +44,19 @@ script = ExtResource("2_xehqc")
 offset_right = 56.0
 offset_bottom = 18.0
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="content" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 17.0
+label_settings = SubResource("LabelSettings_xehqc")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="npc1" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc1"]
+sprite_frames = SubResource("SpriteFrames_i7s6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc1"]
