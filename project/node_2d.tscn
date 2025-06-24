@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=25 format=3 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="2_0hol4"]
@@ -166,15 +166,17 @@ size = Vector2(72, 73)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nhjh"]
 radius = 40.7922
 
+[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+
 [node name="level" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="background" type="ColorRect" parent="."]
-offset_left = -3099.0
-offset_top = -2250.0
-offset_right = 4803.0
-offset_bottom = 2919.0
+offset_left = -2888.0
+offset_top = -2261.0
+offset_right = 5014.0
+offset_bottom = 2908.0
 color = Color(0.745807, 0.996851, 0.520367, 1)
 
 [node name="maincharacter" type="CharacterBody2D" parent="."]
@@ -192,8 +194,12 @@ autoplay = "default"
 position = Vector2(341, 237)
 shape = SubResource("RectangleShape2D_e8dv2")
 
+[node name="Camera2D" type="Camera2D" parent="maincharacter"]
+position = Vector2(339, 243)
+
 [node name="npc" type="CharacterBody2D" parent="."]
 texture_filter = 1
+position = Vector2(43, 92)
 
 [node name="Sprite2D" type="Sprite2D" parent="npc"]
 texture_filter = 1
@@ -205,16 +211,20 @@ texture = ExtResource("3_q6r6c")
 position = Vector2(820, 237)
 shape = SubResource("CircleShape2D_2nhjh")
 
-[node name="dialouge" type="CanvasLayer" parent="."]
+[node name="dialouge" type="CanvasLayer" parent="npc"]
 script = ExtResource("4_0hol4")
 
-[node name="ColorRect" type="ColorRect" parent="dialouge"]
-offset_left = 812.0
-offset_top = 156.0
-offset_right = 907.0
-offset_bottom = 180.0
+[node name="ColorRect" type="ColorRect" parent="npc/dialouge"]
+offset_left = 852.0
+offset_top = 251.0
+offset_right = 953.0
+offset_bottom = 285.0
 color = Color(0, 0.720922, 0.70361, 1)
 
-[node name="content" type="Label" parent="dialouge"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="content" type="Label" parent="npc/dialouge"]
+texture_filter = 1
+offset_left = 864.0
+offset_top = 259.0
+offset_right = 945.0
+offset_bottom = 282.0
+label_settings = SubResource("LabelSettings_0hol4")

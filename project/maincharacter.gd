@@ -4,7 +4,7 @@ extends CharacterBody2D
 #var sprite_2d a new variable called sprite_2d
 #the variable is of type AnimatedSprite2D
 #$sprite2d getting the node named sprite2d from the scene tree = get_node("sprite2d")
-@onready var sprite_2d: AnimatedSprite2D = $sprite2d
+@onready var _animated_sprite = $AnimatedSprite2D
 
 const SPEED = 300.0
 #delta: dela#delta: amount of time in seconds that has passed
@@ -20,34 +20,34 @@ func _physics_process(delta: float) -> void:
 		velocity.x = SPEED
 		velocity.y = 0
 		if(velocity.x > 1):
-			sprite_2d.animation = "right_run"
+			_animated_sprite.animation = "right_run"
 		else:
-			sprite_2d.animation = "right_default"
+			_animated_sprite.animation = "right_default"
 			
 	elif Input.is_action_pressed("left"):
 		velocity.x = -SPEED
 		velocity.y = 0
 		if(velocity.x <- 1):
-			sprite_2d.animation = "left_run"
+			_animated_sprite.animation = "left_run"
 		else:
-			sprite_2d.animation = "left_default"
+			_animated_sprite.animation = "left_default"
 	#sets the current animation of the sprite_2d (an AnimatedSprite2D node) to "left_default".
 			
 	elif Input.is_action_pressed("up"):
 		velocity.x = 0
 		velocity.y = -SPEED
 		if(velocity.y >- 1):
-			sprite_2d.animation = "back_run"
+			_animated_sprite.animation = "back_run"
 		else:
-			sprite_2d.animation = "back_default"
+			_animated_sprite.animation = "back_default"
 		
 	elif Input.is_action_pressed("down"):
 		velocity.x = 0
 		velocity.y = SPEED
 		if(velocity.y < 1):
-			sprite_2d.animation = "front_run"
+			_animated_sprite.animation = "front_run"
 		else:
-			sprite_2d.animation = "default"
+			_animated_sprite.animation = "default"
 		
 #moves your character using its velocity, 
 #and it automatically slides along walls or floors when it hits them.
