@@ -1,11 +1,15 @@
 extends CanvasLayer
-
+#Array[]:A built-in data structure that holds a sequence of elements
+#var is used to declare a new variable,
+#which is like a container that holds a value (like a number, text, object, etc.)
 var dialouge = []
+#current:counter
 var current = 0
-
+#when the scene is loaded(ready), the veriable content would get the node content 
 @onready var content = $content
 
 func _ready():
+	#is a function
 	hide_dialouge()
 	show_dialouge([
 		{text= "lolololol"},
