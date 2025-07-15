@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=28 format=3 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="2_0hol4"]
 [ext_resource type="Texture2D" uid="uid://82fk4vj081jj" path="res://arts/Objects/Egg_item.png" id="3_q6r6c"]
 [ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Objects/generic-rpg-ui-text-box.png" id="5_q6r6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
 atlas = ExtResource("2_0hol4")
@@ -166,17 +167,31 @@ size = Vector2(72, 73)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nhjh"]
 radius = 40.7922
 
-[sub_resource type="LabelSettings" id="LabelSettings_0hol4"]
+[sub_resource type="FontFile" id="FontFile_kdubu"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d21ai"]
+texture = ExtResource("5_q6r6c")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rj586"]
 
 [node name="level" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="background" type="ColorRect" parent="."]
-offset_left = -2888.0
-offset_top = -2261.0
-offset_right = 5014.0
-offset_bottom = 2908.0
+offset_left = 19.0
+offset_top = -71.0
+offset_right = 7921.0
+offset_bottom = 5098.0
 color = Color(0.745807, 0.996851, 0.520367, 1)
 
 [node name="maincharacter" type="CharacterBody2D" parent="."]
@@ -214,17 +229,23 @@ shape = SubResource("CircleShape2D_2nhjh")
 [node name="dialouge" type="CanvasLayer" parent="npc"]
 script = ExtResource("4_0hol4")
 
-[node name="ColorRect" type="ColorRect" parent="npc/dialouge"]
-offset_left = 852.0
-offset_top = 251.0
-offset_right = 953.0
-offset_bottom = 285.0
-color = Color(0, 0.720922, 0.70361, 1)
-
 [node name="content" type="Label" parent="npc/dialouge"]
 texture_filter = 1
-offset_left = 864.0
-offset_top = 259.0
-offset_right = 945.0
-offset_bottom = 282.0
-label_settings = SubResource("LabelSettings_0hol4")
+offset_left = 359.0
+offset_top = 542.0
+offset_right = 829.0
+offset_bottom = 603.0
+theme_override_fonts/font = SubResource("FontFile_kdubu")
+theme_override_font_sizes/font_size = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_d21ai")
+label_settings = SubResource("LabelSettings_rj586")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="avater" type="TextureRect" parent="npc/dialouge"]
+texture_filter = 1
+offset_left = 368.0
+offset_top = 545.0
+offset_right = 421.0
+offset_bottom = 597.0
+texture = ExtResource("3_q6r6c")
