@@ -11,11 +11,7 @@ var current = 0
 func _ready():
 	#is a function
 	hide_dialouge()
-	show_dialouge([
-		{text= "lolololol"},
-		{text= "hahahihihi"},
-		{text= "next scene"},
-		])
+	
 	
 func _input(event):
 	if event.is_action_pressed("accept"):

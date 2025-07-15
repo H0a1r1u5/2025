@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=31 format=3 uid="uid://banwtg3d2dsa2"]
 
-[ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
+[ext_resource type="Script" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="2_0hol4"]
+[ext_resource type="Script" path="res://npc.gd" id="3_4xvjm"]
 [ext_resource type="Texture2D" uid="uid://82fk4vj081jj" path="res://arts/Objects/Egg_item.png" id="3_q6r6c"]
-[ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="4_0hol4"]
+[ext_resource type="Script" path="res://dialogue.gd" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Objects/generic-rpg-ui-text-box.png" id="5_q6r6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
@@ -161,11 +162,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0pjp4"]
+radius = 38.2753
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8dv2"]
 size = Vector2(72, 73)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_grmqr"]
+radius = 37.6962
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nhjh"]
-radius = 40.7922
+radius = 32.3883
 
 [sub_resource type="FontFile" id="FontFile_kdubu"]
 cache/0/16/0/ascent = 0.0
@@ -188,10 +195,10 @@ texture_margin_bottom = 8.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="background" type="ColorRect" parent="."]
-offset_left = 19.0
-offset_top = -71.0
-offset_right = 7921.0
-offset_bottom = 5098.0
+offset_left = -99.0
+offset_top = -74.0
+offset_right = 7803.0
+offset_bottom = 5095.0
 color = Color(0.745807, 0.996851, 0.520367, 1)
 
 [node name="maincharacter" type="CharacterBody2D" parent="."]
@@ -205,16 +212,31 @@ sprite_frames = SubResource("SpriteFrames_ei405")
 animation = &"right_default"
 autoplay = "default"
 
+[node name="InteractArea" type="Area2D" parent="maincharacter/AnimatedSprite2D"]
+position = Vector2(-76.4402, -59.3454)
+scale = Vector2(0.224824, 0.24935)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maincharacter/AnimatedSprite2D/InteractArea"]
+position = Vector2(415, 247)
+shape = SubResource("CircleShape2D_0pjp4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maincharacter"]
-position = Vector2(341, 237)
+position = Vector2(344, 240)
 shape = SubResource("RectangleShape2D_e8dv2")
 
 [node name="Camera2D" type="Camera2D" parent="maincharacter"]
-position = Vector2(339, 243)
+position = Vector2(359, 253)
 
-[node name="npc" type="CharacterBody2D" parent="."]
+[node name="npc" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(43, 92)
+script = ExtResource("3_4xvjm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="npc"]
+position = Vector2(820, 237)
+shape = SubResource("CircleShape2D_grmqr")
 
 [node name="Sprite2D" type="Sprite2D" parent="npc"]
 texture_filter = 1
@@ -222,8 +244,12 @@ position = Vector2(821, 232)
 scale = Vector2(4.625, 4.71875)
 texture = ExtResource("3_q6r6c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+[node name="Interactable" type="Area2D" parent="npc"]
 position = Vector2(820, 237)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interactable"]
 shape = SubResource("CircleShape2D_2nhjh")
 
 [node name="dialouge" type="CanvasLayer" parent="npc"]
@@ -249,3 +275,8 @@ offset_top = 545.0
 offset_right = 421.0
 offset_bottom = 597.0
 texture = ExtResource("3_q6r6c")
+
+[node name="talkbubble" type="Sprite2D" parent="npc"]
+
+[connection signal="area_entered" from="npc/Interactable" to="npc" method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="npc/Interactable" to="npc" method="_on_interactable_area_exited"]
