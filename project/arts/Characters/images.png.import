@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b848nqtcg3u5h"
-path="res://.godot/imported/Paths.png-af99876a05566bf0d7fb5d4358d1157a.ctex"
+uid="uid://ck0t77so5qrai"
+path="res://.godot/imported/images.png-b4bdc5c53a6b0945bd6aae163335918d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Objects/Paths.png"
-dest_files=["res://.godot/imported/Paths.png-af99876a05566bf0d7fb5d4358d1157a.ctex"]
+source_file="res://arts/Characters/images.png"
+dest_files=["res://.godot/imported/images.png-b4bdc5c53a6b0945bd6aae163335918d.ctex"]
 
 [params]
 

@@ -1,12 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=32 format=3 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="2_0hol4"]
 [ext_resource type="Script" uid="uid://g1mdiewqehmi" path="res://npc.gd" id="3_4xvjm"]
 [ext_resource type="Texture2D" uid="uid://82fk4vj081jj" path="res://arts/Objects/Egg_item.png" id="3_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://ck0t77so5qrai" path="res://arts/Characters/images.png" id="3_rj586"]
 [ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="4_0hol4"]
-[ext_resource type="Script" uid="uid://bkt7dnxy0latf" path="res://stone.gd" id="4_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Objects/generic-rpg-ui-text-box.png" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="7_d21ai"]
 
@@ -171,9 +169,6 @@ radius = 38.2753
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8dv2"]
 size = Vector2(72, 73)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
-size = Vector2(226.301, 227)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_grmqr"]
 radius = 37.6962
 
@@ -199,12 +194,6 @@ texture_margin_bottom = 8.0
 [node name="level" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
-offset_left = 37.0
-offset_right = 192.0
-offset_bottom = 518.0
-color = Color(0.301961, 1, 1, 1)
 
 [node name="background" type="ColorRect" parent="."]
 offset_left = -99.0
@@ -241,38 +230,6 @@ shape = SubResource("RectangleShape2D_e8dv2")
 [node name="Camera2D" type="Camera2D" parent="maincharacter"]
 position = Vector2(359, 253)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1807.0
-offset_top = 471.0
-offset_right = 1886.0
-offset_bottom = 527.0
-color = Color(0.533613, 0.408142, 0, 1)
-
-[node name="stone" type="Sprite2D" parent="."]
-position = Vector2(1853.75, 234)
-scale = Vector2(0.384444, 1)
-texture = ExtResource("3_rj586")
-
-[node name="Area2D" type="Area2D" parent="stone"]
-script = ExtResource("4_4d7sh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="stone/Area2D"]
-position = Vector2(-0.651367, -0.5)
-shape = SubResource("RectangleShape2D_4d7sh")
-
-[node name="lock" type="ColorRect" parent="stone"]
-offset_left = -48.772
-offset_top = -14.0
-offset_right = 58.228
-offset_bottom = 26.0
-color = Color(0.685359, 0.735878, 1, 1)
-
-[node name="interact" type="Sprite2D" parent="stone"]
-texture_filter = 1
-position = Vector2(133.309, -28)
-scale = Vector2(15.1642, 4.5)
-texture = ExtResource("7_d21ai")
-
 [node name="npc" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(43, 92)
@@ -296,15 +253,14 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interactable"]
 shape = SubResource("CircleShape2D_2nhjh")
 
-[node name="dialouge" type="CanvasLayer" parent="npc" node_paths=PackedStringArray("content")]
+[node name="dialouge" type="CanvasLayer" parent="npc"]
 script = ExtResource("4_0hol4")
-content = NodePath("content")
 
 [node name="content" type="Label" parent="npc/dialouge"]
 texture_filter = 1
-offset_left = 358.0
+offset_left = 359.0
 offset_top = 542.0
-offset_right = 828.0
+offset_right = 829.0
 offset_bottom = 603.0
 theme_override_fonts/font = SubResource("FontFile_kdubu")
 theme_override_font_sizes/font_size = 3
@@ -313,17 +269,16 @@ label_settings = SubResource("LabelSettings_rj586")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="avater" type="TextureRect" parent="npc/dialouge"]
+texture_filter = 1
+offset_left = 368.0
+offset_top = 545.0
+offset_right = 421.0
+offset_bottom = 597.0
+texture = ExtResource("3_q6r6c")
+
 [node name="talkbubble" type="Sprite2D" parent="npc"]
-position = Vector2(887, 190)
-scale = Vector2(-16.4686, 3.95973)
 texture = ExtResource("7_d21ai")
 
-[node name="talkbubble" type="Sprite2D" parent="npc/talkbubble"]
-position = Vector2(873, 190)
-scale = Vector2(-16.4686, 3.95973)
-texture = ExtResource("7_d21ai")
-
-[connection signal="body_entered" from="stone/Area2D" to="stone/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="stone/Area2D" to="stone/Area2D" method="_on_body_exited"]
 [connection signal="area_entered" from="npc/Interactable" to="npc" method="_on_interactable_area_entered"]
 [connection signal="area_exited" from="npc/Interactable" to="npc" method="_on_interactable_area_exited"]

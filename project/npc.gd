@@ -1,6 +1,8 @@
-extends  StaticBody2D
+extends StaticBody2D
 
-onready var talk_bubble = $talkbubble
+@onready var talk_bubble = $talkbubble
+@onready var dialogue = $dialouge
+
 func _unhandled_input(event):
 	if talk_bubble and event.is_action_pressed("interact"):
 		dialogue.show_dialouge([
