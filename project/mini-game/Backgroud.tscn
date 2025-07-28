@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cya2roqadax52"]
+
+[ext_resource type="Texture2D" uid="uid://c85fegfwhs81g" path="res://arts/底图 (20250725120527).png" id="1_2er5o"]
+
+[node name="backgroud" type="Sprite2D"]
+position = Vector2(575.625, 325.125)
+scale = Vector2(0.259494, 0.258686)
+texture = ExtResource("1_2er5o")
+
+[node name="Teleporter" type="Area2D" parent="."]

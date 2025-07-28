@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="H2AConfig" load_steps=2 format=3 uid="uid://w15jwojot0mv"]
+
+[ext_resource type="Script" uid="uid://dusk25ygholr5" path="res://H2AConfig.gd" id="1_38mjm"]
+
+[resource]
+script = ExtResource("1_38mjm")
+placements = PackedInt32Array(0, 0, 0, 0, 0, 0, 0)
+connections = {
+0: [],
+1: [],
+2: [],
+3: [],
+4: [],
+5: [],
+6: []
+}
+placements/TIME = 0
+placements/SUN = 0
+placements/FISH = 0
+placements/HILL = 0
+placements/CROSS = 0
+placements/CHOICE = 0
+metadata/_custom_type_script = "uid://dusk25ygholr5"

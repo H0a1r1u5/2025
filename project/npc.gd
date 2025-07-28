@@ -6,9 +6,19 @@ extends StaticBody2D
 func _unhandled_input(event):
 	if talk_bubble and event.is_action_pressed("interact"):
 		dialogue.show_dialouge([
-		{text= "lolololol"},
-		{text= "hahahihihi"},
-		{text= "next scene"},
+		{text= "“A stranger… in the Sandcrypt. Either bold or foolish.”"},
+		{text= "I am Sir Caelum of the Ember Oath… or what remains of him."},
+		{text= "You’re a knight? What happened here?"},
+		{text= "This dungeon was once a tomb… now it
+		 hungers. I came seeking redemption — and 
+		the Gem of Solara. But I failed. My memories… 
+		fragments scattered like ashes."},
+		{text= "““The Gem of Solara… I need it to 
+		stop the Collapse. If you know where it is,
+		 help me find it.””"},
+		{text= "““Ah… The Collapse still looms above. 
+		So my fight was not in vain. But the Gem 
+		lies beyond locked doors — sealed by echoes of my past. Find them, and I shall guide you.””"},
 		])
 
 func _on_interactable_area_entered(area: Area2D) -> void:
