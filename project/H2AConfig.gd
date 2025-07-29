@@ -42,6 +42,23 @@ func _get_property_list() -> Array:
 			"hint_string":options_str,
 			
 		})
+		
+	for slot in Slot.size() - 1:
+		var available := PackedStringArray()
+		for dst in Slot.size():
+			if dst <= slot:
+				available.append("")
+			else:
+				available.append(Slot.keys()[dst])
+		var available_str := ",".join(available)
+		properties.append({
+			"name": "connections/" + Slot.keys()[slot],
+			"type": TYPE_INT,
+			"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE,
+			"hint": PROPERTY_HINT_FLAGS,
+			"hint_string":available_str,
+			
+		})
 	return properties
 
 func _get(property):
@@ -54,7 +71,7 @@ func _get(property):
 	
 func _set(property, value):
 		if property.begins_with("placements/"):
-			property = property.trim_prefix("placement/")
+			property = property.trim_prefix("placements/")
 			var index := int(Slot[property])
 			placements[index] = value
 			emit_changed()

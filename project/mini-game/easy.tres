@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_38mjm")
-placements = PackedInt32Array(0, 0, 0, 0, 0, 0, 0)
+placements = PackedInt32Array(0, 1, 2, 3, 4, 5, 6)
 connections = {
 0: [],
 1: [],
@@ -14,10 +14,16 @@ connections = {
 5: [],
 6: []
 }
-placements/TIME = 0
-placements/SUN = 0
-placements/FISH = 0
-placements/HILL = 0
-placements/CROSS = 0
-placements/CHOICE = 0
+placements/TIME = 1
+placements/SUN = 2
+placements/FISH = 3
+placements/HILL = 4
+placements/CROSS = 5
+placements/CHOICE = 6
+connections/NULL = null
+connections/TIME = null
+connections/SUN = null
+connections/FISH = null
+connections/HILL = null
+connections/CROSS = null
 metadata/_custom_type_script = "uid://dusk25ygholr5"
