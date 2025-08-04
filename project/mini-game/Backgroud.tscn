@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cya2roqadax52"]
+[gd_scene load_steps=3 format=3 uid="uid://cya2roqadax52"]
 
-[ext_resource type="Texture2D" uid="uid://c85fegfwhs81g" path="res://arts/底图 (20250725120527).png" id="1_2er5o"]
+[ext_resource type="Texture2D" uid="uid://c85fegfwhs81g" path="res://arts/Objects/底图 (20250725120527).png" id="1_2er5o"]
+[ext_resource type="Script" uid="uid://bmi02k5u8axy2" path="res://mini-game/H2Aboard.gd" id="2_qeoiu"]
 
-[node name="backgroud" type="Sprite2D"]
-position = Vector2(575.625, 325.125)
-scale = Vector2(0.259494, 0.258686)
+[node name="node" type="Node2D"]
+
+[node name="Node2D" type="Sprite2D" parent="."]
+position = Vector2(576, 333)
+scale = Vector2(0.261798, 0.265176)
 texture = ExtResource("1_2er5o")
 
-[node name="Teleporter" type="Area2D" parent="."]
+[node name="board" type="Node2D" parent="Node2D"]
+position = Vector2(-99.3132, 0)
+scale = Vector2(-0.160889, -0.153783)
+script = ExtResource("2_qeoiu")
+radius = 5600.0

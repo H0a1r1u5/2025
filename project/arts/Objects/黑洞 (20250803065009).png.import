@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c85fegfwhs81g"
-path="res://.godot/imported/底图 (20250725120527).png-0fd7d1f37a2aa6087f751788659c7477.ctex"
+uid="uid://bl0s46eq24icm"
+path="res://.godot/imported/黑洞 (20250803065009).png-e29ff836ee9f72e2b2e229f49024a36b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/底图 (20250725120527).png"
-dest_files=["res://.godot/imported/底图 (20250725120527).png-0fd7d1f37a2aa6087f751788659c7477.ctex"]
+source_file="res://arts/Objects/黑洞 (20250803065009).png"
+dest_files=["res://.godot/imported/黑洞 (20250803065009).png-e29ff836ee9f72e2b2e229f49024a36b.ctex"]
 
 [params]
 
