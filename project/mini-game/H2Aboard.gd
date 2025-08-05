@@ -13,15 +13,17 @@ var _radius: float = 100.0
 		return _radius
 
 var _config: H2AConfig
+
 @export var config: H2AConfig:
 	set(value):
 		_config = value
-		set_config(value)
+		set_config(value)  # Update board after set
 	get:
 		return _config
 
 func set_config(v: H2AConfig):
 	_config = v
+	print("Updating board with config:", v)
 	_update_board()
 
 func _draw():
@@ -40,7 +42,7 @@ func _update_board():
 	if not _config:
 		return
 
-	for src in range(H2AConfig.Slot.size()):
+	for src in H2AConfig.Slot.size():
 		for dst in range(src + 1, H2AConfig.Slot.size()):
 			if not dst in _config.connections[src]:
 				continue
@@ -48,11 +50,12 @@ func _update_board():
 			add_child(line)
 			line.add_point(_get_slot_position(src))
 			line.add_point(_get_slot_position(dst))
-			line.width = LINE_TEXTURE.get_size().y
+			line.width = 16
 			line.texture = LINE_TEXTURE
-			line.texture_mode = Line2D.LINE_TEXTURE_TILE
+			line.texture_mode = Line2D.LINE_TEXTURE_STRETCH
 			line.default_color = Color.WHITE
-			line.show_behind_parent = true
+			#line.show_behind_parent = true
+	
 
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius
