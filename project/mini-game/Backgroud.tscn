@@ -12,7 +12,7 @@ scale = Vector2(0.261798, 0.265176)
 texture = ExtResource("1_2er5o")
 
 [node name="board" type="Node2D" parent="Node2D"]
-position = Vector2(-78.542, 0)
+position = Vector2(-86.1826, 0)
 scale = Vector2(0.168, 0.17)
 script = ExtResource("2_qeoiu")
 radius = 5300.0

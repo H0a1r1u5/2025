@@ -4,12 +4,13 @@ extends Node2D
 const SLOT_TEXTURE = preload("res://arts/Objects/黑洞 (20250803065009).png")
 const LINE_TEXTURE = preload("res://arts/Objects/黑线 (20250803065255) (1).png")
 
+# Radius property for spacing slots in a circle
 var _radius: float = 100.0
-@export var radius: float:
-	set(value):
+@export var radius: float: # Exported to adjust in inspector
+	set(value):# Runs whenever radius changes
 		_radius = value
-		queue_redraw()
-	get:
+		queue_redraw()# Redraw the Node2D so changes appear instantly
+	get: # Returns the current radius
 		return _radius
 
 var _config: H2AConfig
@@ -17,31 +18,37 @@ var _config: H2AConfig
 @export var config: H2AConfig:
 	set(value):
 		_config = value
-		set_config(value)  # Update board after set
+		set_config(value)  
 	get:
 		return _config
 
 func set_config(v: H2AConfig):
 	_config = v
-	print("Updating board with config:", v)
-	_update_board()
+	_update_board()  # Rebuild the board visuals
 
+# Draws the slot icons for each position
 func _draw():
 	for slot in range(H2AConfig.Slot.size()):
+		 # Center texture
 		draw_texture(SLOT_TEXTURE, _get_slot_position(slot) - SLOT_TEXTURE.get_size() / 2)
+		
 
 func set_radius(v: float) -> void:
 	_radius = v
 	queue_redraw()
-
+	
+# Clears old lines and draws new connections based on the config
 func _update_board():
 	for node in get_children():
 		if node.owner == null:
 			node.queue_free()
-
+# If no config is set, do nothing
 	if not _config:
 		return
 
+# Create lines between connected slots
+#src = source slot index (the slot you start from)
+#dst is another node (slot) where a connection ends.
 	for src in H2AConfig.Slot.size():
 		for dst in range(src + 1, H2AConfig.Slot.size()):
 			if not dst in _config.connections[src]:
@@ -50,12 +57,12 @@ func _update_board():
 			add_child(line)
 			line.add_point(_get_slot_position(src))
 			line.add_point(_get_slot_position(dst))
-			line.width = 16
+			line.width = LINE_TEXTURE.get_size().y
 			line.texture = LINE_TEXTURE
 			line.texture_mode = Line2D.LINE_TEXTURE_STRETCH
 			line.default_color = Color.WHITE
-			#line.show_behind_parent = true
+			line.show_behind_parent = true
 	
-
+#Calculates the position of a slot
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius
