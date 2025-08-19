@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=36 format=3 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Characters/全地图 (20250720095347).png" id="1_ir8iy"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Objects/generic-rpg-ui-text-box.png" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="7_d21ai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rj586"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj586"]
 texture = ExtResource("1_ir8iy")
@@ -198,6 +200,11 @@ texture_margin_bottom = 8.0
 [sub_resource type="LabelSettings" id="LabelSettings_rj586"]
 
 [node name="level" type="Node2D"]
+
+[node name="Interactable" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_rj586")
 
 [node name="map" type="Panel" parent="."]
 offset_left = -452.0

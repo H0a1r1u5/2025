@@ -63,6 +63,13 @@ func _update_board():
 			line.default_color = Color.WHITE
 			line.show_behind_parent = true
 	
+	for slot in range(1, H2AConfig.Slot.size()):
+		var stone := H2AStone.new()
+		add_child(stone)
+		stone.target_slot = slot
+		stone.current_slot = config.placements[slot]
+		stone.position = _get_slot_position(stone.current_slot)
+
 #Calculates the position of a slot
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius
