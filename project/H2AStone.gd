@@ -33,5 +33,5 @@ func _update_state():
 	var index := _target_slot_internal
 	if _target_slot_internal != _current_slot_internal:
 		index += H2AConfig.Slot.size() - 1
-	set_texture(load("res://arts/flags/棋子_01.webp"))
+	var current_texture_path: String = "res://arts/flags/棋子_01.webp"
 	
