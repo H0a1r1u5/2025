@@ -1,10 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://3kjteobq63y2"]
 
-[ext_resource type="Texture2D" uid="uid://ctwl37eb56lxr" path="res://arts/63a9b70e2e202c1580f84044b33f4c21.JPG" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://yphl30s1b312" path="res://menu.gd" id="1_ouk20"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lti8b"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
-texture = ExtResource("1_lti8b")
+texture = SubResource("CompressedTexture2D_lti8b")
 modulate_color = Color(0.720467, 0.720468, 0.720467, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsb4k"]
