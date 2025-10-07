@@ -21,13 +21,12 @@ func _ready():
 	hide_dialouge()
 	
 func _unhandled_input(event):
-	
 	if event.is_action_pressed("accept"):
 		if current + 1 < dialouge.size():
 			_show_dialouge(current + 1)
 		else:
 			hide_dialouge()
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 		
 func hide_dialouge():
 	if not content == null:

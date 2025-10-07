@@ -21,3 +21,4 @@ func _on_interactable_area_entered(area: Area2D) -> void:
 
 func _on_interactable_area_exited(area: Area2D) -> void:
 	talk_bubble.hide()
+"res://H2AConfig.gd"

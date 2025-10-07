@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=7 format=3 uid="uid://cnbqn18mjfu6f"]
+
+[ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="1_21dv4"]
+[ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="2_6je7j"]
+[ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="2_airvr"]
+[ext_resource type="Texture2D" uid="uid://2blp0r4hyr35" path="res://arts/Characters/aghost.png" id="3_3yb2m"]
+
+[sub_resource type="Resource" id="Resource_2wo64"]
+script = ExtResource("1_21dv4")
+character_name = "Mina"
+content = "DDDDDDDDDDDD"
+avatar = ExtResource("2_airvr")
+show_on_left = true
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_mk2mc"]
+script = ExtResource("1_21dv4")
+character_name = "Ghost"
+content = "ewaregr"
+avatar = ExtResource("3_3yb2m")
+show_on_left = true
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[resource]
+script = ExtResource("2_6je7j")
+dialogue_list = Array[ExtResource("1_21dv4")]([SubResource("Resource_2wo64"), SubResource("Resource_mk2mc")])
+metadata/_custom_type_script = "uid://txdqcd5njurm"

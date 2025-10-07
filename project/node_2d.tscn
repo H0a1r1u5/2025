@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=44 format=3 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Characters/全地图 (20250720095347).png" id="1_ir8iy"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cr6r883s5dbsj" path="res://arts/Characters/ghost.png" id="6_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="7_d21ai"]
 [ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="9_4d7sh"]
+[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="10_ir8iy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj586"]
 
@@ -229,10 +230,10 @@ texture_margin_bottom = 8.0
 shape = SubResource("CircleShape2D_rj586")
 
 [node name="map" type="Panel" parent="."]
-offset_left = -471.0
-offset_top = -2224.0
-offset_right = 3899.0
-offset_bottom = 1064.0
+offset_left = -440.0
+offset_top = -2258.0
+offset_right = 3930.0
+offset_bottom = 1030.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rj586")
 
 [node name="Area2D" type="Area2D" parent="map"]
@@ -335,6 +336,12 @@ shape = SubResource("RectangleShape2D_e8dv2")
 
 [node name="Camera2D" type="Camera2D" parent="maincharacter"]
 position = Vector2(359, 253)
+
+[node name="Control" parent="maincharacter/Camera2D" instance=ExtResource("10_ir8iy")]
+offset_left = -575.0
+offset_top = -322.0
+offset_right = 578.0
+offset_bottom = 330.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 760.0
