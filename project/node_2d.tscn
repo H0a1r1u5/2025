@@ -222,7 +222,6 @@ texture_margin_bottom = 8.0
 [sub_resource type="LabelSettings" id="LabelSettings_rj586"]
 
 [node name="level" type="Node2D"]
-position = Vector2(23, -1849)
 
 [node name="Interactable" type="Area2D" parent="."]
 
