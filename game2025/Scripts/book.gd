@@ -17,8 +17,3 @@ func _ready():
 		if event is InputEventKey:
 			var key_name = OS.get_keycode_string(event.physcial_keycode)
 			$InteractionLabel.text = "Press %s to open" % key_name
-
-func _process(delta):
-	if player_in_area and not is_open:
-		if Input.is_action_just_pressed("interact"):
-			_open_book()

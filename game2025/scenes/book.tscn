@@ -10,7 +10,6 @@ size = Vector2(11.5, 10.5)
 
 [node name="Book" type="Area2D"]
 script = ExtResource("1_3wpgy")
-interaction_key = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0300293, 0.0301514)
