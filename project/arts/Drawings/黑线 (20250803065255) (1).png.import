@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxfwr56wa3b3c"
-path="res://.godot/imported/Free_Chicken_House.png-fa2e41492fb33699e6e1c3a75213df41.ctex"
+uid="uid://be63f1rfhu877"
+path="res://.godot/imported/黑线 (20250803065255) (1).png-093dae88ab17f91571c434926031bccd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Objects/Free_Chicken_House.png"
-dest_files=["res://.godot/imported/Free_Chicken_House.png-fa2e41492fb33699e6e1c3a75213df41.ctex"]
+source_file="res://arts/Drawings/黑线 (20250803065255) (1).png"
+dest_files=["res://.godot/imported/黑线 (20250803065255) (1).png-093dae88ab17f91571c434926031bccd.ctex"]
 
 [params]
 

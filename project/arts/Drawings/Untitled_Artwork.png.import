@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clb3ts3a7xx4k"
-path="res://.godot/imported/generic-rpg-ui-text-box.png-0647a11948a4a17a75d5db30ba99619e.ctex"
+uid="uid://bkj3ghjt3j28y"
+path="res://.godot/imported/Untitled_Artwork.png-31b6e70fd987a37e9d842fc8060eb8f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Objects/generic-rpg-ui-text-box.png"
-dest_files=["res://.godot/imported/generic-rpg-ui-text-box.png-0647a11948a4a17a75d5db30ba99619e.ctex"]
+source_file="res://arts/Drawings/Untitled_Artwork.png"
+dest_files=["res://.godot/imported/Untitled_Artwork.png-31b6e70fd987a37e9d842fc8060eb8f5.ctex"]
 
 [params]
 

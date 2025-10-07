@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl0s46eq24icm"
-path="res://.godot/imported/黑洞 (20250803065009).png-e29ff836ee9f72e2b2e229f49024a36b.ctex"
+uid="uid://dt22om2j47p82"
+path="res://.godot/imported/shaking_hand.png-dfe8aa61da80a0f35a63a4f3842f25b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Objects/黑洞 (20250803065009).png"
-dest_files=["res://.godot/imported/黑洞 (20250803065009).png-e29ff836ee9f72e2b2e229f49024a36b.ctex"]
+source_file="res://arts/Drawings/shaking_hand.png"
+dest_files=["res://.godot/imported/shaking_hand.png-dfe8aa61da80a0f35a63a4f3842f25b4.ctex"]
 
 [params]
 

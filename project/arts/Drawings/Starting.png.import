@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsuh2m0dynxr4"
-path="res://.godot/imported/Basic_tools_and_meterials.png-78c2db3cddd364c67cb8d39d4800cbd3.ctex"
+uid="uid://blvcuvkqqwqwc"
+path="res://.godot/imported/Starting.png-86b54c27abb0e7b75cc361b57c7abc44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Objects/Basic_tools_and_meterials.png"
-dest_files=["res://.godot/imported/Basic_tools_and_meterials.png-78c2db3cddd364c67cb8d39d4800cbd3.ctex"]
+source_file="res://arts/Drawings/Starting.png"
+dest_files=["res://.godot/imported/Starting.png-86b54c27abb0e7b75cc361b57c7abc44.ctex"]
 
 [params]
 

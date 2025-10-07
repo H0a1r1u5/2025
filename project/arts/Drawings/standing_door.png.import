@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx0kjexjk8uy3"
-path="res://.godot/imported/chess_012.webp-64e8b59dd8c41e38b208da2f85a7ef0f.ctex"
+uid="uid://cb7j5k61tflf6"
+path="res://.godot/imported/standing_door.png-f7c6b98eb16262a4d531b883bcd4e69c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/chess_012.webp"
-dest_files=["res://.godot/imported/chess_012.webp-64e8b59dd8c41e38b208da2f85a7ef0f.ctex"]
+source_file="res://arts/Drawings/standing_door.png"
+dest_files=["res://.godot/imported/standing_door.png-f7c6b98eb16262a4d531b883bcd4e69c.ctex"]
 
 [params]
 

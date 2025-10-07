@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="H2AConfig" load_steps=2 format=3 uid="uid://w15jwojot0mv"]
 
-[ext_resource type="Script" uid="uid://dusk25ygholr5" path="res://H2AConfig.gd" id="1_38mjm"]
+[ext_resource type="Script" uid="uid://dusk25ygholr5" path="res://Scripts/H2AConfig.gd" id="1_38mjm"]
 
 [resource]
 script = ExtResource("1_38mjm")

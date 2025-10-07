@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cya2roqadax52"]
 
-[ext_resource type="Texture2D" uid="uid://c85fegfwhs81g" path="res://arts/Objects/底图 (20250725120527).png" id="1_2er5o"]
+[ext_resource type="Texture2D" uid="uid://c85fegfwhs81g" path="res://arts/Drawings/底图 (20250725120527).png" id="1_2er5o"]
 [ext_resource type="Script" uid="uid://bmi02k5u8axy2" path="res://mini-game/H2Aboard.gd" id="2_qeoiu"]
 [ext_resource type="Resource" uid="uid://w15jwojot0mv" path="res://mini-game/easy.tres" id="3_5iyun"]
 

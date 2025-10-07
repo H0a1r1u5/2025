@@ -1,20 +1,20 @@
 [gd_scene load_steps=44 format=3 uid="uid://banwtg3d2dsa2"]
 
-[ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://maincharacter.gd" id="1_epypp"]
-[ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Characters/全地图 (20250720095347).png" id="1_ir8iy"]
-[ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="2_0hol4"]
-[ext_resource type="Script" uid="uid://g1mdiewqehmi" path="res://npc.gd" id="3_4xvjm"]
-[ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://dialogue.gd" id="4_0hol4"]
-[ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Objects/generic-rpg-ui-text-box.png" id="5_q6r6c"]
-[ext_resource type="Texture2D" uid="uid://cr6r883s5dbsj" path="res://arts/Characters/ghost.png" id="6_4d7sh"]
-[ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="7_d21ai"]
-[ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="9_4d7sh"]
-[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="10_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Characters/全地图 (20250720095347).png" id="1_dubn7"]
+[ext_resource type="Script" uid="uid://dta82b2pjsixn" path="res://Scripts/maincharacter.gd" id="2_08kqv"]
+[ext_resource type="Texture2D" uid="uid://cj6y8802psy7a" path="res://arts/Characters/Basic Charakter Spritesheet.png" id="3_f6ptj"]
+[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="4_hsdmi"]
+[ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="5_ifa78"]
+[ext_resource type="Script" uid="uid://g1mdiewqehmi" path="res://Scripts/npc.gd" id="6_xtx0q"]
+[ext_resource type="Texture2D" uid="uid://cr6r883s5dbsj" path="res://arts/Characters/ghost.png" id="7_3kg8w"]
+[ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://Scripts/dialogue.gd" id="8_x63s8"]
+[ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Drawings/generic-rpg-ui-text-box.png" id="9_0q20i"]
+[ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="10_qv8l0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj586"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj586"]
-texture = ExtResource("1_ir8iy")
+texture = ExtResource("1_dubn7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(55.75, 71.25)
@@ -38,67 +38,67 @@ size = Vector2(54.5, 145)
 size = Vector2(59.75, 131.25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(96, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(0, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(48, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(96, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(144, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(0, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjqkl"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(48, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(96, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vxoj"]
-atlas = ExtResource("2_0hol4")
+atlas = ExtResource("3_f6ptj")
 region = Rect2(144, 144, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ei405"]
@@ -214,7 +214,7 @@ cache/0/16/0/scale = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d21ai"]
 content_margin_left = 130.0
-texture = ExtResource("5_q6r6c")
+texture = ExtResource("9_0q20i")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
@@ -310,7 +310,7 @@ position = Vector2(345.125, 1257.63)
 shape = SubResource("RectangleShape2D_nr8wp")
 
 [node name="maincharacter" type="CharacterBody2D" parent="."]
-script = ExtResource("1_epypp")
+script = ExtResource("2_08kqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="maincharacter"]
 texture_filter = 1
@@ -337,7 +337,7 @@ shape = SubResource("RectangleShape2D_e8dv2")
 [node name="Camera2D" type="Camera2D" parent="maincharacter"]
 position = Vector2(359, 253)
 
-[node name="Control" parent="maincharacter/Camera2D" instance=ExtResource("10_ir8iy")]
+[node name="Control" parent="maincharacter/Camera2D" instance=ExtResource("4_hsdmi")]
 offset_left = -575.0
 offset_top = -322.0
 offset_right = 578.0
@@ -358,12 +358,12 @@ scale = Vector2(0.384444, 1)
 texture_filter = 1
 position = Vector2(208.093, -38)
 scale = Vector2(15.1642, 4.5)
-texture = ExtResource("7_d21ai")
+texture = ExtResource("5_ifa78")
 
 [node name="npc" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(43, 92)
-script = ExtResource("3_4xvjm")
+script = ExtResource("6_xtx0q")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="npc"]
 position = Vector2(818, 243)
@@ -373,7 +373,7 @@ shape = SubResource("CapsuleShape2D_ir8iy")
 texture_filter = 1
 position = Vector2(816.203, 250)
 scale = Vector2(0.112467, 0.103778)
-texture = ExtResource("6_4d7sh")
+texture = ExtResource("7_3kg8w")
 
 [node name="Interactable" type="Area2D" parent="npc"]
 position = Vector2(820, 237)
@@ -386,7 +386,7 @@ shape = SubResource("CircleShape2D_2nhjh")
 
 [node name="dialouge" type="CanvasLayer" parent="npc"]
 process_mode = 3
-script = ExtResource("4_0hol4")
+script = ExtResource("8_x63s8")
 
 [node name="content" type="Label" parent="npc/dialouge"]
 texture_filter = 1
@@ -412,14 +412,14 @@ offset_left = -18.0
 offset_top = -26.0
 offset_right = 99.0
 offset_bottom = 85.0
-texture = ExtResource("9_4d7sh")
+texture = ExtResource("10_qv8l0")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="talkbubble" type="Sprite2D" parent="npc"]
 position = Vector2(865.039, 184.144)
 scale = Vector2(-10.1939, 5.91186)
-texture = ExtResource("7_d21ai")
+texture = ExtResource("5_ifa78")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-753, -1931)
