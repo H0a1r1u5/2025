@@ -21,6 +21,9 @@ var _config: H2AConfig
 		set_config(value)  
 	get:
 		return _config
+		
+var _stone_map := {}
+
 
 func set_config(v: H2AConfig):
 	_config = v
@@ -69,7 +72,45 @@ func _update_board():
 		stone.target_slot = slot
 		stone.current_slot = config.placements[slot]
 		stone.position = _get_slot_position(stone.current_slot)
+		_stone_map[slot] = stone
+		stone.connect("interact", Callable(self, "_request_move"))
 
-#Calculates the position of a slot
+	
+func _request_move(stone:H2AStone):
+	print("requesting move for", stone.name)
+
+	var available := H2AConfig.Slot.values()
+	print("initial slots:", available)
+
+	for s in _stone_map.values():
+		print("erasing", s.current_slot)
+		available.erase(s.current_slot)
+
+	print("remaining slots:", available)
+
+	assert(available.size() == 1)
+
+	var available_slot := available.front() as int
+	print("available slot:", available_slot)
+	print("connections:", config.connections[stone.current_slot])
+
+	if available_slot in config.connections[stone.current_slot]:
+		print("connected — moving!")
+		_move_stone(stone, available_slot)
+	else:
+		print("not connected, skip move")
+
+func _move_stone(stone: H2AStone, slot: int):
+	print("Attempting to move", stone.name, "to slot", slot)
+	print("Inside tree?", stone.is_inside_tree())
+	print("Current:", stone.position, "Target:", _get_slot_position(slot))
+
+	var tween := get_tree().create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(stone, "position", _get_slot_position(slot), 0.2)
+
+	# Tween the position properttween.tween_property(stone, "position", _get_slot_position(slot), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius
