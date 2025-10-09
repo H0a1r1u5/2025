@@ -1,20 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnh03got2cwaw"]
+[gd_scene load_steps=3 format=3 uid="uid://bnh03got2cwaw"]
 
 [ext_resource type="Script" uid="uid://b84cqa7fh4mly" path="res://dialogues/dialogue_manger.gd" id="1_cvuwv"]
-[ext_resource type="Texture2D" uid="uid://2blp0r4hyr35" path="res://arts/Characters/aghost.png" id="1_ma2lh"]
-[ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="2_cvuwv"]
 [ext_resource type="Resource" uid="uid://cnbqn18mjfu6f" path="res://dialogues/dialogue1.tres" id="2_gihco"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("character_name_text", "text_box", "left_avatar", "right_avatar")]
+[node name="Control" type="Control" node_paths=PackedStringArray("character_name_text", "text_box")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1153.0
-offset_bottom = 652.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 0
 script = ExtResource("1_cvuwv")
 character_name_text = NodePath("HBoxContainer/Panel/MarginContainer/VBoxContainer/Name")
 text_box = NodePath("HBoxContainer/Panel/MarginContainer/VBoxContainer/Content")
-left_avatar = NodePath("HBoxContainer/LeftAvatar")
-right_avatar = NodePath("HBoxContainer/RightAvatar")
 main_dialogue = ExtResource("2_gihco")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -26,13 +23,6 @@ anchor_bottom = 1.0
 offset_top = -200.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="RightAvatar" type="TextureRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-texture = ExtResource("1_ma2lh")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="HBoxContainer"]
 layout_mode = 2
@@ -55,21 +45,12 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
 text = "sefsdf"
 
 [node name="Content" type="Label" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
 text = "Thdrgq'ri'ghqg[i fghqigihpq guqpfhqw efqup"
 autowrap_mode = 3
-
-[node name="LeftAvatar" type="TextureRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-texture = ExtResource("2_cvuwv")
-expand_mode = 1
-stretch_mode = 5
 
 [connection signal="gui_input" from="HBoxContainer/Panel/MarginContainer" to="." method="_on_click"]

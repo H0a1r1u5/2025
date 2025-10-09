@@ -1,9 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1e3pjfq6o6rm"]
+[gd_scene load_steps=17 format=3 uid="uid://b1e3pjfq6o6rm"]
 
 [ext_resource type="Texture2D" uid="uid://blvcuvkqqwqwc" path="res://arts/Drawings/Starting.png" id="1_f4vo8"]
 [ext_resource type="Texture2D" uid="uid://dt22om2j47p82" path="res://arts/Drawings/shaking_hand.png" id="2_fecmx"]
 [ext_resource type="Texture2D" uid="uid://cb7j5k61tflf6" path="res://arts/Drawings/standing_door.png" id="3_onevj"]
-[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="4_q1kfr"]
+[ext_resource type="Script" uid="uid://d3jr6h3heivub" path="res://scenes/control.gd" id="4_f4vo8"]
+[ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="5_onevj"]
+[ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="6_q1kfr"]
+
+[sub_resource type="Resource" id="Resource_kkuo2"]
+script = ExtResource("5_onevj")
+character_name = ""
+content = "(The screen fades in. A dimly lit living room. The sound of rain outside. Mina and her mother stand facing each other.)"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_3jlq0"]
+script = ExtResource("5_onevj")
+character_name = "Mother(Angery):"
+content = " Mina, I’ve told you a hundred times—stop wasting your time with those drawings! You need to think about your future."
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_bscq4"]
+script = ExtResource("5_onevj")
+character_name = "Mina (defensive):"
+content = " It’s not a waste of time! Drawing is the only thing that makes me feel alive. Why can’t you understand that?"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_4jluf"]
+script = ExtResource("5_onevj")
+character_name = "Mother (snapping):"
+content = " Because the real world doesn’t care about your silly dreams! You’re just being selfish."
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_ou25h"]
+script = ExtResource("5_onevj")
+character_name = "Mina (voice rising):"
+content = " Selfish? You never listen to me! All you do is shout and tell me what I can’t do. Maybe I don’t want the life you chose for me!"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_gjmvi"]
+script = ExtResource("5_onevj")
+character_name = "Mina (quiet, hurt):"
+content = " I can’t stay here anymore.
+"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_jfxrs"]
+script = ExtResource("5_onevj")
+character_name = "Narration (Mina’s thoughts):"
+content = " I don’t care where I go. I just need to get away. Away from her voice… away from this house… away from everything."
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_2t5jm"]
+script = ExtResource("6_q1kfr")
+dialogue_list = Array[ExtResource("5_onevj")]([SubResource("Resource_kkuo2"), SubResource("Resource_3jlq0"), SubResource("Resource_bscq4"), SubResource("Resource_4jluf"), SubResource("Resource_ou25h"), SubResource("Resource_gjmvi"), SubResource("Resource_jfxrs")])
+metadata/_custom_type_script = "uid://txdqcd5njurm"
+
+[sub_resource type="Animation" id="Animation_onevj"]
+resource_name = "fade_in_overlay1"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1kfr"]
+_data = {
+&"fade_in_overlay1": SubResource("Animation_onevj")
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,12 +77,13 @@ color = Color(0, 0, 0, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 139.0
-offset_top = 38.0
-offset_right = 990.0
-offset_bottom = 633.0
+offset_left = 75.0
+offset_top = -32.0
+offset_right = 1061.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 texture = ExtResource("1_f4vo8")
 expand_mode = 1
 
@@ -45,4 +104,74 @@ texture = ExtResource("3_onevj")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Control" parent="." instance=ExtResource("4_q1kfr")]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("character_name_text", "text_box")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 528.0
+offset_right = 919.0
+offset_bottom = 620.0
+scale = Vector2(1.06211, 1.28573)
+size_flags_horizontal = 4
+script = ExtResource("4_f4vo8")
+character_name_text = NodePath("Panel/MarginContainer/VBoxContainer/Name")
+text_box = NodePath("Panel/MarginContainer/VBoxContainer/Content")
+main_dialogue = SubResource("Resource_2t5jm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -93.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1, 1.41431)
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.163
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.00399971
+offset_right = 1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "dddd"
+
+[node name="Content" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "dWEFWEF"
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q1kfr")
+}
+
+[connection signal="gui_input" from="Control/Panel/MarginContainer" to="Control" method="_on_click"]

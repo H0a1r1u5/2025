@@ -3,8 +3,6 @@ extends Control
 @export_group("UI")
 @export var character_name_text : Label
 @export var text_box : Label
-@export var left_avatar : TextureRect
-@export var right_avatar : TextureRect
 
 @export_group("talking")
 @export var main_dialogue : DialogueGroup
@@ -32,14 +30,6 @@ func display_next_dialogue():
 			typing_tween.tween_callback(append_character.bind(character)).set_delay(0.05)
 		typing_tween.tween_callback(func(): dialogue_index += 1)
 		
-		if dialogue.show_on_left:
-			left_avatar.texture = dialogue.avatar
-			right_avatar.texture = null
-		else:
-			left_avatar.texture = null
-			right_avatar.texture = dialogue.avatar
-		
-	
 func append_character(character : String):
 	text_box.text += character
 	
