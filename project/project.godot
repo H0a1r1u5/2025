@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Dialogue="*res://Scripts/dialogue.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 left={
