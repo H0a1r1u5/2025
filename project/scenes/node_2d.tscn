@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=20 format=3 uid="uid://banwtg3d2dsa2"]
 
-[ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Characters/全地图 (20250720095347).png" id="1_dubn7"]
+[ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Drawings/全地图 (20250720095347).png" id="1_dubn7"]
 [ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="4_hsdmi"]
 [ext_resource type="PackedScene" uid="uid://4cc7ti3lyvta" path="res://scenes/player.tscn" id="5_f6ptj"]
 [ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="5_ifa78"]
@@ -17,11 +17,10 @@
 texture = ExtResource("1_dubn7")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ir8iy"]
-radius = 46.0
-height = 148.0
+height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nhjh"]
-radius = 51.0882
+radius = 10.7703
 
 [sub_resource type="FontFile" id="FontFile_kdubu"]
 cache/0/16/0/ascent = 0.0
@@ -40,32 +39,10 @@ texture_margin_bottom = 8.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_rj586"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
-size = Vector2(53.25, 117.563)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
-size = Vector2(69.875, 71.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
-size = Vector2(86, 87.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
-size = Vector2(41, 91)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
-size = Vector2(52, 97)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
-size = Vector2(54.5, 145)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
-size = Vector2(59.75, 131.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dubn7"]
-size = Vector2(66.5, 78)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_08kqv"]
 radius = 774.537
+
+[sub_resource type="TileSet" id="TileSet_dubn7"]
 
 [node name="level" type="Node2D"]
 
@@ -75,22 +52,22 @@ radius = 774.537
 shape = SubResource("CircleShape2D_rj586")
 
 [node name="map" type="Panel" parent="."]
-offset_left = -2.0
-offset_top = -671.0
-offset_right = 843.0
-offset_bottom = 4.0
+offset_left = 6.0
+offset_top = -15.0
+offset_right = 851.0
+offset_bottom = 660.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rj586")
 
 [node name="Area2D" type="Area2D" parent="map"]
 
 [node name="Player" parent="." instance=ExtResource("5_f6ptj")]
-position = Vector2(355, -244)
+position = Vector2(262, 184)
 
 [node name="Control" parent="Player" instance=ExtResource("4_hsdmi")]
-offset_left = -191.0
-offset_top = -109.0
-offset_right = 190.0
-offset_bottom = 108.0
+offset_left = -74.0
+offset_top = 507.0
+offset_right = 307.0
+offset_bottom = 724.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 760.0
@@ -115,22 +92,24 @@ position = Vector2(43, 92)
 script = ExtResource("6_xtx0q")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="npc"]
-position = Vector2(818, 243)
+position = Vector2(274, 85)
 shape = SubResource("CapsuleShape2D_ir8iy")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="npc"]
 texture_filter = 1
-position = Vector2(816.203, 250)
-scale = Vector2(0.112467, 0.103778)
+position = Vector2(275, 87)
+scale = Vector2(0.0249367, 0.0219435)
 texture = ExtResource("7_3kg8w")
+metadata/_edit_group_ = true
 
 [node name="Interactable" type="Area2D" parent="npc"]
-position = Vector2(820, 237)
+position = Vector2(328, 95.4011)
 collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Interactable"]
-position = Vector2(-5, 0)
+position = Vector2(-55, -10.4011)
 shape = SubResource("CircleShape2D_2nhjh")
 
 [node name="dialouge" type="CanvasLayer" parent="npc"]
@@ -139,10 +118,10 @@ script = ExtResource("8_x63s8")
 
 [node name="content" type="Label" parent="npc/dialouge"]
 texture_filter = 1
-offset_left = 358.0
-offset_top = 542.0
-offset_right = 828.0
-offset_bottom = 603.0
+offset_left = -134.0
+offset_top = 400.401
+offset_right = 336.0
+offset_bottom = 461.401
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 2
 theme_override_fonts/font = SubResource("FontFile_kdubu")
@@ -154,6 +133,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 max_lines_visible = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Avatar" type="TextureRect" parent="npc/dialouge/content"]
 layout_mode = 0
@@ -164,102 +144,13 @@ offset_bottom = 85.0
 texture = ExtResource("10_qv8l0")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="talkbubble" type="Sprite2D" parent="npc"]
-position = Vector2(856.307, 180)
-scale = Vector2(-7.12962, 5.91186)
+position = Vector2(281, 68)
+scale = Vector2(-1.14849, 1.00693)
 texture = ExtResource("5_ifa78")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-753, -1931)
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(562, 1935)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1819.94, -20)
-shape = SubResource("RectangleShape2D_4d7sh")
-one_way_collision_margin = 0.0
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3669, 325)
-shape = SubResource("RectangleShape2D_4d7sh")
-one_way_collision_margin = 0.0
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(511, 19)
-shape = SubResource("RectangleShape2D_ir8iy")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1900, -99)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2948, 159)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(4221, 78)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2337, 106.25)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3942, 1416)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(790, 933)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2753, 329)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2030, -100)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2422, 65)
-shape = SubResource("RectangleShape2D_4d7sh")
-one_way_collision_margin = 0.0
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2946.13, 723.63)
-shape = SubResource("RectangleShape2D_4d7sh")
-one_way_collision_margin = 0.0
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2217, 138)
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2796.5, 771.5)
-shape = SubResource("RectangleShape2D_hqns4")
-
-[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2886, 743)
-shape = SubResource("RectangleShape2D_x0ka3")
-
-[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2166.75, 1043)
-shape = SubResource("RectangleShape2D_0h7mo")
-
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(658.125, 930.63)
-shape = SubResource("RectangleShape2D_nr8wp")
-
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(576.5, 1009)
-shape = SubResource("RectangleShape2D_dubn7")
-
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(788, 1082)
-shape = SubResource("RectangleShape2D_dubn7")
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2020, 577)
@@ -271,6 +162,10 @@ texture = ExtResource("11_08kqv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-33.9695, -34.5379)
 shape = SubResource("CircleShape2D_08kqv")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_dubn7")
+format = 2
 
 [connection signal="area_entered" from="npc/Interactable" to="npc" method="_on_interactable_area_entered"]
 [connection signal="area_exited" from="npc/Interactable" to="npc" method="_on_interactable_area_exited"]
