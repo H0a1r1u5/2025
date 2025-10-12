@@ -3,9 +3,13 @@ extends CharacterBody2D
 class_name Player
 
 @onready var animated_sprite_2d: AnimationController = $AnimatedSprite2D
+@onready var pause_screen: Control = $CanvasLayer/PauseScreen
 
 const SPEED = 100.0
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		pause_screen.show_pause()
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=23 format=3 uid="uid://banwtg3d2dsa2"]
 
+[ext_resource type="Script" uid="uid://dgfyuvmxj4v7o" path="res://Scripts/node_2d.gd" id="1_08kqv"]
 [ext_resource type="Texture2D" uid="uid://c4d4laeh256lh" path="res://arts/Drawings/全地图 (20250720095347).png" id="1_dubn7"]
+[ext_resource type="AudioStream" uid="uid://dxryhqaeaofbn" path="res://assets/material/Characters/ambient-background-339939.mp3" id="2_f6ptj"]
 [ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="4_hsdmi"]
 [ext_resource type="PackedScene" uid="uid://4cc7ti3lyvta" path="res://scenes/player.tscn" id="5_f6ptj"]
 [ext_resource type="Texture2D" uid="uid://b3g6dg8eju5a8" path="res://arts/Characters/generic-rpg-ui-inventario03.png" id="5_ifa78"]
@@ -47,7 +49,9 @@ radius = 366.717
 
 [sub_resource type="TileSet" id="TileSet_dubn7"]
 
-[node name="level" type="Node2D"]
+[node name="Desert" type="Node2D"]
+script = ExtResource("1_08kqv")
+bgm = ExtResource("2_f6ptj")
 
 [node name="Interactable" type="Area2D" parent="."]
 
