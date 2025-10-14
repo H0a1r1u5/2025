@@ -1,7 +1,9 @@
-[gd_scene load_steps=29 format=4 uid="uid://banwtg3d2dsa2"]
+[gd_scene load_steps=32 format=4 uid="uid://banwtg3d2dsa2"]
 
 [ext_resource type="Texture2D" uid="uid://ddeqnhrsqlnnh" path="res://arts/Drawings/全地图 (20251011050455).png" id="1_08kqv"]
+[ext_resource type="Script" uid="uid://dgfyuvmxj4v7o" path="res://Scripts/node_2d.gd" id="1_xtx0q"]
 [ext_resource type="Texture2D" uid="uid://bujqn5v0gba0r" path="res://arts/tiles/小件2 (20251011051235).webp" id="2_f6ptj"]
+[ext_resource type="AudioStream" uid="uid://dxryhqaeaofbn" path="res://assets/material/Characters/ambient-background-339939.mp3" id="2_x63s8"]
 [ext_resource type="Texture2D" uid="uid://s8mtt07tv1sv" path="res://arts/tiles/小件3 (20251011051438).webp" id="3_hsdmi"]
 [ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="4_hsdmi"]
 [ext_resource type="Texture2D" uid="uid://bkrxmdlh0h03h" path="res://arts/tiles/小件1 (20251011051153).webp" id="4_ifa78"]
@@ -14,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Drawings/generic-rpg-ui-text-box.png" id="9_0q20i"]
 [ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="10_qv8l0"]
 [ext_resource type="Texture2D" uid="uid://b0juc4mjbsyje" path="res://arts/flags/chess_07.webp" id="11_08kqv"]
+[ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://globals/music.tscn" id="16_3kg8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj586"]
 
@@ -5112,6 +5115,8 @@ texture_margin_bottom = 8.0
 radius = 366.717
 
 [node name="level" type="Node2D"]
+script = ExtResource("1_xtx0q")
+bgm = ExtResource("2_x63s8")
 
 [node name="Interactable" type="Area2D" parent="."]
 
@@ -5243,6 +5248,8 @@ texture = ExtResource("11_08kqv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-46198.5, -4351.78)
 shape = SubResource("CircleShape2D_08kqv")
+
+[node name="Music" parent="." instance=ExtResource("16_3kg8w")]
 
 [connection signal="area_entered" from="npc/Interactable" to="npc" method="_on_interactable_area_entered"]
 [connection signal="area_exited" from="npc/Interactable" to="npc" method="_on_interactable_area_exited"]

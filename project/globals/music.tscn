@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cud1g7w1lskfp" path="res://globals/sound_manager.gd" id="1_05ggv"]
 
-[node name="SoundManager" type="Node"]
+[node name="Music" type="Node"]
 process_mode = 3
 script = ExtResource("1_05ggv")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kp78pvxiq0fs"
-path="res://.godot/imported/SpriteSheet.png-da89b94a40fae22af2f2e0d9ec83cee9.ctex"
+uid="uid://cdxoykw8lnrcj"
+path="res://.godot/imported/puzzle_image.png-dfb5d96fd1a44f3d8f3d9c374854ff0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/material/Humble Gift - v1.3/PNG/SpriteSheet.png"
-dest_files=["res://.godot/imported/SpriteSheet.png-da89b94a40fae22af2f2e0d9ec83cee9.ctex"]
+source_file="res://assets/material/Characters/puzzle_image.png"
+dest_files=["res://.godot/imported/puzzle_image.png-dfb5d96fd1a44f3d8f3d9c374854ff0c.ctex"]
 
 [params]
 
