@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=11 format=3 uid="uid://cf1fqcngreml8"]
 
-[ext_resource type="Texture2D" uid="uid://d6xpm3fktsxq" path="res://assets/material/Characters/MediavelFree.png" id="1_0omi4"]
-[ext_resource type="Texture2D" uid="uid://c1yxqbxj2nlsi" path="res://assets/material/Characters/TopDownHouse_FurnitureState1.png" id="1_a2l2q"]
-[ext_resource type="FontFile" uid="uid://df2fko4bumdkn" path="res://assets/material/Characters/m6x11.ttf" id="3_0omi4"]
-[ext_resource type="Texture2D" uid="uid://kp78pvxiq0fs" path="res://assets/material/Humble Gift - v1.3/PNG/SpriteSheet.png" id="3_58jnp"]
+[ext_resource type="Texture2D" uid="uid://d6xpm3fktsxq" path="res://arts/material/Characters/MediavelFree.png" id="1_0omi4"]
+[ext_resource type="Texture2D" uid="uid://c1yxqbxj2nlsi" path="res://arts/material/Characters/TopDownHouse_FurnitureState1.png" id="1_a2l2q"]
+[ext_resource type="FontFile" uid="uid://df2fko4bumdkn" path="res://arts/material/Characters/m6x11.ttf" id="3_0omi4"]
+[ext_resource type="Texture2D" uid="uid://kp78pvxiq0fs" path="res://arts/material/Humble Gift - v1.3/PNG/SpriteSheet.png" id="3_58jnp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_470mv"]
 content_margin_left = 4.0

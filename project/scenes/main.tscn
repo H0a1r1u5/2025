@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=4 uid="uid://b1gvoamnyfe12"]
 
 [ext_resource type="Script" uid="uid://bxi0yj24dwu2o" path="res://Scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://c45g8pb26p6ti" path="res://assets/material/Characters/TopDownHouse_FloorsAndWalls.png" id="1_sugp2"]
-[ext_resource type="Texture2D" uid="uid://c1yxqbxj2nlsi" path="res://assets/material/Characters/TopDownHouse_FurnitureState1.png" id="2_jyhfs"]
-[ext_resource type="AudioStream" uid="uid://ce0dogv2asc30" path="res://assets/material/Characters/a-nostalgic-memory-of-ireland-291622.mp3" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://c45g8pb26p6ti" path="res://arts/material/Characters/TopDownHouse_FloorsAndWalls.png" id="1_sugp2"]
+[ext_resource type="Texture2D" uid="uid://c1yxqbxj2nlsi" path="res://arts/material/Characters/TopDownHouse_FurnitureState1.png" id="2_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://ce0dogv2asc30" path="res://arts/material/Characters/a-nostalgic-memory-of-ireland-291622.mp3" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://4cc7ti3lyvta" path="res://scenes/player.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://scenes/music.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://qnfv4hn4t66l" path="res://scenes/book.tscn" id="6_o6xl0"]

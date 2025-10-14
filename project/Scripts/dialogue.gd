@@ -5,8 +5,8 @@ extends CanvasLayer
 #var is used to declare a new variable,
 #which is like a container that holds a value (like a number, text, object, etc.)
 const AVATAR_MAP = {
-	"Mina": preload("res://arts/Characters/MinaA.png"),
-	"ghost": preload("res://arts/Characters/aghost.png")
+	"Mina": preload("res://arts/Drawings/Characters/MinaA.png"),
+	"ghost": preload("res://arts/Drawings/Characters/aghost.png")
 
 }
 

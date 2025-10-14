@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://qnfv4hn4t66l"]
 
 [ext_resource type="Script" uid="uid://bmadqollvapop" path="res://Scripts/book.gd" id="1_3wpgy"]
-[ext_resource type="Texture2D" uid="uid://c71uno4f15dys" path="res://assets/material/bestiary_book/bestiary_03.png" id="1_ble1a"]
+[ext_resource type="Texture2D" uid="uid://c71uno4f15dys" path="res://arts/material/bestiary_book/bestiary_03.png" id="1_ble1a"]
 [ext_resource type="PackedScene" uid="uid://ctji5gkeevjlu" path="res://interaction/interaction area/interaction_area.tscn" id="3_8uccb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wpgy"]
