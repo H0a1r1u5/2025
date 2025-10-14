@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://cf1fqcngreml8" path="res://main_theme.tres" id="1_con2f"]
 [ext_resource type="Script" uid="uid://yphl30s1b312" path="res://Scripts/menu.gd" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://dlpyt82rhwcol" path="res://arts/material/Characters/Untitled_Artwork copy.png" id="3_mhnvy"]
-[ext_resource type="FontFile" uid="uid://df2fko4bumdkn" path="res://arts/material/Characters/m6x11.ttf" id="4_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://dlpyt82rhwcol" path="res://assets/material/Characters/Untitled_Artwork copy.png" id="3_mhnvy"]
+[ext_resource type="FontFile" uid="uid://df2fko4bumdkn" path="res://assets/material/Characters/m6x11.ttf" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
 texture = ExtResource("3_mhnvy")
