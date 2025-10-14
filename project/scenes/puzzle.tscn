@@ -6,10 +6,3 @@
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_4opeh")
 puzzle_image = ExtResource("2_3asjn")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577, 325.5)
-scale = Vector2(14.557, 8.47436)
-texture = ExtResource("2_3asjn")
-region_enabled = true
-region_rect = Rect2(369, 33, 79, 78)
