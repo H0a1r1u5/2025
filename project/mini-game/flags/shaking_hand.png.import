@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mrl1jmiei6ff"
-path="res://.godot/imported/chess_06.webp-32453925af0176b208c22b2de8cd216e.ctex"
+uid="uid://b31c1gurdwnka"
+path="res://.godot/imported/shaking_hand.png-644692958fef0ab55e3ce93f8d21989c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/flags/chess_06.webp"
-dest_files=["res://.godot/imported/chess_06.webp-32453925af0176b208c22b2de8cd216e.ctex"]
+source_file="res://mini-game/flags/shaking_hand.png"
+dest_files=["res://.godot/imported/shaking_hand.png-644692958fef0ab55e3ce93f8d21989c.ctex"]
 
 [params]
 

@@ -77,40 +77,33 @@ func _update_board():
 
 	
 func _request_move(stone:H2AStone):
-	print("requesting move for", stone.name)
-
 	var available := H2AConfig.Slot.values()
-	print("initial slots:", available)
 
 	for s in _stone_map.values():
-		print("erasing", s.current_slot)
 		available.erase(s.current_slot)
-
-	print("remaining slots:", available)
-
 	assert(available.size() == 1)
 
 	var available_slot := available.front() as int
-	print("available slot:", available_slot)
-	print("connections:", config.connections[stone.current_slot])
 
 	if available_slot in config.connections[stone.current_slot]:
-		print("connected — moving!")
 		_move_stone(stone, available_slot)
 	else:
 		print("not connected, skip move")
 
 func _move_stone(stone: H2AStone, slot: int):
-	print("Attempting to move", stone.name, "to slot", slot)
-	print("Inside tree?", stone.is_inside_tree())
-	print("Current:", stone.position, "Target:", _get_slot_position(slot))
-
 	var tween := get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(stone, "position", _get_slot_position(slot), 0.2)
-
+	tween.tween_interval(1,0)
+	tween.tween_callback(self,"_check")
 	# Tween the position properttween.tween_property(stone, "position", _get_slot_position(slot), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
-
+func _check():
+	for stone in _stone_map.values():
+		if stone.Current_slot != stone.target_slot:
+		return
+	Game.flay.add("h2a_unlocked")
+	SceneChanger.change_scene_to_file("res://scenes/main.tscn")
+	
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius
