@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqs38fknigech"]
+[gd_scene load_steps=2 format=3 uid="uid://cqs38fknigech"]
 
 [ext_resource type="PackedScene" uid="uid://b1e3pjfq6o6rm" path="res://scenes/Opening.tscn" id="1_nlufs"]
-[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="2_pgvbc"]
-[ext_resource type="Texture2D" uid="uid://bbbpi1femxn2k" path="res://arts/Drawings/library.png" id="3_k8dgl"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,10 +9,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Node2D" parent="." instance=ExtResource("1_nlufs")]
-
-[node name="Control2" parent="Node2D" instance=ExtResource("2_pgvbc")]
-
-[node name="Library" type="Sprite2D" parent="."]
-position = Vector2(583, 307)
-scale = Vector2(0.530238, 0.380995)
-texture = ExtResource("3_k8dgl")

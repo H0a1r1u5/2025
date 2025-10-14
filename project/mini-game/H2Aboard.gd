@@ -1,8 +1,8 @@
 @tool
 extends Node2D
 
-const SLOT_TEXTURE = preload("res://arts/Objects/黑洞 (20250803065009).png")
-const LINE_TEXTURE = preload("res://arts/Objects/黑线 (20250803065255) (1).png")
+const SLOT_TEXTURE = preload("res://arts/Drawings/黑洞 (20250803065009).png")
+const LINE_TEXTURE = preload("res://arts/Drawings/黑线 (20250803065255) (1).png")
 
 # Radius property for spacing slots in a circle
 var _radius: float = 100.0

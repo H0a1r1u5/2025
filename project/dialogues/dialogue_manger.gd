@@ -1,4 +1,6 @@
 extends Control
+signal dialogue_changed(current_index)
+var typing_tween : Tween
 
 @export_group("UI")
 @export var character_name_text : Label
@@ -15,7 +17,10 @@ func display_next_dialogue():
 		return
 	
 	var dialogue = main_dialogue.dialogue_list[dialogue_index]
-	var typing_tween : Tween
+	emit_signal("dialogue_changed", dialogue_index)
+	
+
+
 	if typing_tween and typing_tween.is_running():
 		typing_tween.kill()
 		text_box.text = dialogue.content
@@ -30,6 +35,7 @@ func display_next_dialogue():
 			typing_tween.tween_callback(append_character.bind(character)).set_delay(0.05)
 		typing_tween.tween_callback(func(): dialogue_index += 1)
 		
+
 func append_character(character : String):
 	text_box.text += character
 	

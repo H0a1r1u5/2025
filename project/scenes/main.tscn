@@ -322,6 +322,7 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_sugp2")
 
 [node name="main" type="Node2D"]
+position = Vector2(-1, 0)
 script = ExtResource("1_jyhfs")
 bgm = ExtResource("2_tefeu")
 
