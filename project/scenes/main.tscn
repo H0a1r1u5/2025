@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1yxqbxj2nlsi" path="res://assets/material/Characters/TopDownHouse_FurnitureState1.png" id="2_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://ce0dogv2asc30" path="res://assets/material/Characters/a-nostalgic-memory-of-ireland-291622.mp3" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://4cc7ti3lyvta" path="res://scenes/player.tscn" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://scenes/music.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://globals/music.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://qnfv4hn4t66l" path="res://scenes/book.tscn" id="6_o6xl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
