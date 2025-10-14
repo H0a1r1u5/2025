@@ -6,6 +6,7 @@ signal interact(stone)
 
 # Sprite2D will be created automatically
 var sprite: Sprite2D
+var collision_shape : CollisionShape2D;
 
 # Internal storage for slots
 var _target_slot_internal: int = 0
@@ -25,10 +26,13 @@ var current_slot: int:
 	get:
 		return _current_slot_internal
 		
-func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Stone clicked:", name)
-		do_interact()
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+	if (event is InputEventMouseButton) :
+		if (event.is_pressed()) :
+			print(event)
+			if (event.button_index == MOUSE_BUTTON_RIGHT) :
+				print("Stone clicked:", name)
+				do_interact()
 
 
 func _ready():
@@ -37,6 +41,13 @@ func _ready():
 		sprite = Sprite2D.new()
 		add_child(sprite)
 	_update_texture()
+
+	if collision_shape == null :
+		collision_shape = CollisionShape2D.new()
+		var shape = CircleShape2D.new()
+		shape.radius = 2000
+		collision_shape.shape = shape
+		add_child(collision_shape)
 
 func _set_target_slot(v: int):
 	_target_slot_internal = v
