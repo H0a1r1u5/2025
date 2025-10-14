@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fp3ma80ery8v"
-path="res://.godot/imported/Untitled_Artwork.png-c3a138d95a04f78fcd633addcd3c4b2d.ctex"
+uid="uid://c30t75yr2vbo5"
+path="res://.godot/imported/chess_04.webp-345195cce5cd0618cf0aac54371a35b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/flags/Untitled_Artwork.png"
-dest_files=["res://.godot/imported/Untitled_Artwork.png-c3a138d95a04f78fcd633addcd3c4b2d.ctex"]
+source_file="res://mini-game/flags/chess_04.webp"
+dest_files=["res://.godot/imported/chess_04.webp-345195cce5cd0618cf0aac54371a35b6.ctex"]
 
 [params]
 
