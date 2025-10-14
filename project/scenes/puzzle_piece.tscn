@@ -1,18 +1,6 @@
-[gd_scene format=3 uid="uid://fagrfkmapw4w"]
+[gd_scene load_steps=2 format=3 uid="uid://fagrfkmapw4w"]
 
-[node name="PuzzlePiece" type="TextureRect"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://bps0dl1v35vgq" path="res://Scripts/slice_puzzle_irregular.gd" id="1_a0ykv"]
 
-[node name="Content" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Shadow" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node" type="Node"]
+script = ExtResource("1_a0ykv")

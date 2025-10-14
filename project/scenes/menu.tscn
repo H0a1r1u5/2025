@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://3kjteobq63y2"]
+[gd_scene load_steps=7 format=3 uid="uid://3kjteobq63y2"]
 
+[ext_resource type="Theme" uid="uid://cf1fqcngreml8" path="res://main_theme.tres" id="1_con2f"]
 [ext_resource type="Script" uid="uid://yphl30s1b312" path="res://Scripts/menu.gd" id="1_yqeox"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lti8b"]
+[ext_resource type="Texture2D" uid="uid://dlpyt82rhwcol" path="res://assets/material/Characters/Untitled_Artwork copy.png" id="3_mhnvy"]
+[ext_resource type="FontFile" uid="uid://df2fko4bumdkn" path="res://assets/material/Characters/m6x11.ttf" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouk20"]
-texture = SubResource("CompressedTexture2D_lti8b")
+texture = ExtResource("3_mhnvy")
 modulate_color = Color(0.720467, 0.720468, 0.720467, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsb4k"]
@@ -17,13 +18,14 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[node name="Main_menu" type="Control"]
+[node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_con2f")
 script = ExtResource("1_yqeox")
 
 [node name="Panel" type="Panel" parent="."]
@@ -31,53 +33,73 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ouk20")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 128.0
+offset_right = 2.0
+offset_bottom = 241.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.760784, 0.545098, 0.368627, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mhnvy")
+theme_override_font_sizes/font_size = 80
+text = "Drifting
+Sands"
+horizontal_alignment = 1
+
+[node name="V" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.481
 anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -135.0
-offset_right = 119.0
-offset_bottom = 135.0
+offset_left = -109.96
+offset_top = 27.0
+offset_right = 188.888
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.96, 1.08)
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="V"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mhnvy")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
 text = "Start game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="V"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
 text = "Exit"
 
-[node name="Button4" type="Button" parent="VBoxContainer"]
+[node name="Button4" type="Button" parent="V"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
 text = "Setting"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="V"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_vsb4k")
 text = "About"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="V/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="V/Button2" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="V/Button4" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="V/Button3" to="." method="_on_about_pressed"]
