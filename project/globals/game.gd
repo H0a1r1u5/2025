@@ -23,6 +23,7 @@ func change_scene(path: String, entry_point: String) -> void:
 			tree.current_scene.update_player(node.global_position)
 			break
 
+
 func has_save() -> bool:
 	return FileAccess.file_exists(SAVE_PATH)
 
