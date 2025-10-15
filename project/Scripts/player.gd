@@ -27,3 +27,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play_idle_animation()
 	
 	move_and_slide()
+
+
+func _on_interactable_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

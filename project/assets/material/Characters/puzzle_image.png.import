@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:project/mini-game/flags/chess_01.webp.import
-uid="uid://bh6b22sjxn8kl"
-path="res://.godot/imported/chess_01.webp-2121cdc7163023935a39a55900fedaf6.ctex"
-========
-uid="uid://cdxoykw8lnrcj"
+uid="uid://bt3npknmlcor1"
 path="res://.godot/imported/puzzle_image.png-dfb5d96fd1a44f3d8f3d9c374854ff0c.ctex"
->>>>>>>> Zoey-merge:project/assets/material/Characters/puzzle_image.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:project/mini-game/flags/chess_01.webp.import
-source_file="res://mini-game/flags/chess_01.webp"
-dest_files=["res://.godot/imported/chess_01.webp-2121cdc7163023935a39a55900fedaf6.ctex"]
-========
 source_file="res://assets/material/Characters/puzzle_image.png"
 dest_files=["res://.godot/imported/puzzle_image.png-dfb5d96fd1a44f3d8f3d9c374854ff0c.ctex"]
->>>>>>>> Zoey-merge:project/assets/material/Characters/puzzle_image.png.import
 
 [params]
 

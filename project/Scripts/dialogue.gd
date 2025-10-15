@@ -41,5 +41,10 @@ func _show_dialouge(index):
 	current = index
 	var current_dialouge = dialouge[current] 
 	content.text = current_dialouge.text
-	avatar.texture = AVATAR_MAP[dialouge.avatar]
+	avatar.texture = AVATAR_MAP[current_dialouge.avatar]
 	
+
+
+func _on_content_visibility_changed() -> void:
+	if content:
+		get_tree().paused = content.visible

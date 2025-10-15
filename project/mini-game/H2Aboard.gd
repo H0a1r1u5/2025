@@ -92,18 +92,23 @@ func _request_move(stone:H2AStone):
 
 func _move_stone(stone: H2AStone, slot: int):
 	var tween := get_tree().create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(stone, "position", _get_slot_position(slot), 0.2)
-	tween.tween_interval(1,0)
-	tween.tween_callback(self,"_check")
-	# Tween the position properttween.tween_property(stone, "position", _get_slot_position(slot), 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_interval(1.0)  # waits for 1 second before callback
+	tween.tween_callback(Callable(self, "_check"))  # correct Godot 4 syntax
+
+	# Update the stone’s logical position
+	stone.current_slot = slot
+
 
 func _check():
 	for stone in _stone_map.values():
-		if stone.Current_slot != stone.target_slot:
-		return
-	Game.flay.add("h2a_unlocked")
-	SceneChanger.change_scene_to_file("res://scenes/main.tscn")
+		if stone.current_slot != stone.target_slot:
+			return
+	# Make sure "Game" is the correct global name; change if needed (e.g. Global, GameManager)
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+
 	
 func _get_slot_position(slot: int) -> Vector2:
 	return Vector2.DOWN.rotated(TAU / H2AConfig.Slot.size() * slot) * _radius

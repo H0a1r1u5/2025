@@ -67,7 +67,7 @@ func _update_texture():
 	var index := _target_slot_internal
 	if _target_slot_internal != _current_slot_internal:
 		index += H2AConfig.Slot.size() - 1
-	sprite.texture = load("res://arts/flags/chess_%02d.webp" % index)
+	sprite.texture = load("res://mini-game/flags/chess_%02d.webp" % index)
 
 func do_interact():
 	emit_signal("interact", self)
