@@ -1,75 +1,31 @@
 extends Node2D
-
-@onready var cells = $Cells
-@onready var cell_scene = preload("res://scenes/Cell.tscn")
-@onready var pieces = $Pieces
-@onready var piece_scene = preload("res://scenes/PuzzlePiece.tscn")
-
-#var piece_size: Vector2 = Vector2.ZERO
-var piece_size: Vector2 = Vector2(100, 100)
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	init_game()
-
-
-func init_game():
-	generate_pieces()
-	draw_cells()
-
-func draw_cells():
-	for i in range(G.grid_size.x):
-		for j in range(G.grid_size.y):
-			add_cell(i,j)
-
-func add_cell(i, j):
-	var cell = cell_scene.instantiate()
-	cells.add_child(cell)
-	G.cells.append(cell)
-	cell.position = Vector2(
-		int(piece_size.x) * i,
-		int(piece_size.y) * j
-	)
-	var idx = int(i * G.grid_size.x) + j
-	cell.init_cell(idx, piece_size)
-
-func generate_pieces():
-	var image: Image = G.get_image()
-	var texture = ImageTexture.create_from_image(image)
-	piece_size = Vector2(
-		texture.get_width() / G.grid_size.x,
-		texture.get_height() / G.grid_size.y,
-	)
-
-	for i in range(G.grid_size.x):
-		for j in range(G.grid_size.y):
-			var piece = piece_scene.instantiate()
-			pieces.add_child(piece)
-			G.pieces.append(piece)
-			
-			# Select region from image
-			var region = Rect2(i * piece_size.x, j * piece_size.y, piece_size.x, piece_size.y)
-			var sub_image = image.get_region(Rect2i(region.position, region.size))
-			var sub_tex = ImageTexture.create_from_image(sub_image)
-			var pos 
-			var index = int(i * G.grid_size.x + j)
-			randomize()
-			if index < (G.grid_size.x * G.grid_size.y)/ 2:
-				pos = Vector2(
-					randi_range(100, 200),
-					randi_range(100, 800)
-				)
-			else:
-				pos = Vector2(
-					randi_range(500, 800),
-					randi_range(100, 800)
-				)
-			
-			piece.init_piece(
-				index,
-				sub_tex,
-				pos,
-				piece_size
-				)
-func _on_puzzle_completed():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+@onready var  arr = [$piece/TextureRect, $piece/TextureRect2, $piece/TextureRect3, $piece/TextureRect4, $piece/TextureRect5, $piece/TextureRect6, $piece/TextureRect7, $piece/TextureRect8, $piece/TextureRect9, $piece/TextureRect10, $piece/TextureRect11, $piece/TextureRect12]
+# @export var list : Array[Texture]
+func _ready() -> void:
+	for node in arr:
+		node.set_meta("Whether occupied",false)
+	for node: TextureRect in $piece .get_children():
+		node.gui_input.connect(func(event: InputEvent):
+			if(event is InputEventScreenDrag):
+				node.global_position += event.relative
+			if event is InputEventScreenTouch:
+				if !event.pressed:
+					for cell in arr:
+						print(cell.get_meta("Whether occupied"))
+						#print(cell.global_position.distance_to(node.global_position))
+						if cell.global_position.distance_to(node.global_position) < 300 and !cell.get_meta("Whether occupied", false):
+							cell.set_meta("Whether occupied", true)
+							node.global_position = cell.global_position
+						pass
+					pass
+				else:
+					for cell in arr:
+						#print(cell.global_position.distance_to(node.global_position))
+						if cell.global_position.distance_to(node.global_position) < 100 and cell.get_meta("Whether occupied", false):
+							cell.set_meta("Whether occupied", false)
+						
+					pass
+				pass
+			pass
+		)
+		pass

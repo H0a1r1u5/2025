@@ -1,13 +1,9 @@
 extends Area2D
+@onready var label: Label = $Label
 
-@onready var interaction_area = $InteractionArea
-@onready var sprite = $Sprite2D
-
-func _ready():
-	interaction_area.interact = Callable(self, "_open_book")
-	interaction_area.action_name = "open book"
-
-func _open_book():
-	sprite.frame = 1 if sprite.frame == 0 else 0
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/Main_puzzle.tscn")
+func _physics_process(delta: float) -> void:
+	label.visible = $"../player" in get_overlapping_bodies()
+	if (Input.is_action_just_released("interact")) and  $"../player" in get_overlapping_bodies():
+		get_tree().change_scene_to_file("res://scenes/Main_puzzle.tscn")
+		pass
+		
