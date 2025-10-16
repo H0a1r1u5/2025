@@ -82,13 +82,9 @@ func _request_move(stone:H2AStone):
 	for s in _stone_map.values():
 		available.erase(s.current_slot)
 	assert(available.size() == 1)
-
 	var available_slot := available.front() as int
+	_move_stone(stone,available_slot)
 
-	if available_slot in config.connections[stone.current_slot]:
-		_move_stone(stone, available_slot)
-	else:
-		print("not connected, skip move")
 
 func _move_stone(stone: H2AStone, slot: int):
 	var tween := get_tree().create_tween()

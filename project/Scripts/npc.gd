@@ -7,19 +7,20 @@ extends StaticBody2D
 
 func _unhandled_input(event):
 	if talkbubble.visible and event.is_action_pressed("interact"):
-		dialogue.show_dialouge([
-			{avatar="ghost", text= "“A stranger… in the Sandcrypt. Either bold or foolish.”"},
-			{avatar="ghost", text= "I am Sir Caelum of the Ember Oath… or what remains of him."},
-			{avatar="Mina", text= "You’re a knight? What happened here?"},
-			{avatar="ghost", text= "This dungeon was once a tomb… now it hungers. I came seeking redemption — and the Gem of Solara. But I failed. My memories… fragments scattered like ashes."},
-			{avatar="Mina", text= "The Gem of Solara… I need it to stop the Collapse. If you know where it is, help me find it."},
-			{avatar="ghost", text= "Ah… The Collapse still looms above. So my fight was not in vain. But the Gem lies beyond locked doors — sealed by echoes of my past. Find them, and I shall guide you."},
-		])
+		print($Interactable.get_overlapping.bodies())
+		if $"../Player" in $Interactable.get_overlapping_bodies():
+			dialogue.show_dialouge([
+				{avatar="ghost", text= "“You have wandered into the Dungeon of Memories.”"},
+				{avatar="ghost", text= "This place holds the echoes of what was once yours."},
+				{avatar="Mina", text= "What is this place? Why does it feel… familiar?"},
+				{avatar="ghost", text= "Because your past sleeps here, beneath the stones."},
+				{avatar="Mina", text= "Many tombs lie before you, but only one remembers your name."},
+				{avatar="ghost", text= "Find the right tomb, and you will find the way home."},
+				{avatar="Mina", text= "And when I find it?"},
+				{avatar="ghost", text= "You must return what was taken."},
+				{avatar="ghost", text= "Place the stones onto their true resting places on the tomb."},
+				{avatar="ghost", text= "When each stone is where it belongs… the truth will awaken."},
+			])
 		
-		
-func _on_interactable_area_entered(area: Area2D) -> void:
-	talkbubble.show()
-	
-	
-func _on_interactable_area_exited(area: Area2D) -> void:
-	talkbubble.hide()
+func _physics_process(delta: float)-> void:
+	$talkbubble.visible = $"../Player" in $Interactable.get_overlapping_bodies()
