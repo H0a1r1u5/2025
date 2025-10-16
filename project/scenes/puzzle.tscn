@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwcq111l4g4k5"]
-
-[ext_resource type="Script" uid="uid://sclg50jitdji" path="res://Scripts/PuzzleManager.gd" id="1_4opeh"]
-[ext_resource type="Texture2D" uid="uid://cdxoykw8lnrcj" path="res://assets/material/Characters/puzzle_image.png" id="2_3asjn"]
-
-[node name="Puzzle" type="Node2D"]
-script = ExtResource("1_4opeh")
-puzzle_image = ExtResource("2_3asjn")

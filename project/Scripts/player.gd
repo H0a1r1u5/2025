@@ -13,6 +13,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("left", "right", "up", "down")
+	var min_x = 0
+	var max_x = 1152
+	var min_y = 0
+	var max_y = 648
+	position.x = clamp(position.x, min_x, max_x)
+	position.y = clamp(position.y, min_y, max_y)
 	
 	if direction:
 		velocity = direction * SPEED
@@ -27,7 +33,4 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play_idle_animation()
 	
 	move_and_slide()
-
-
-func _on_interactable_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	
