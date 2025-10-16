@@ -1,11 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqs38fknigech"]
+[gd_scene load_steps=3 format=3 uid="uid://cqs38fknigech"]
 
-[ext_resource type="PackedScene" uid="uid://b1e3pjfq6o6rm" path="res://scenes/Opening.tscn" id="1_nlufs"]
+[ext_resource type="Texture2D" uid="uid://culmjsbbsbwnn" path="res://arts/Drawings/Ending.png" id="1_n06ov"]
+[ext_resource type="PackedScene" uid="uid://bnh03got2cwaw" path="res://dialogues/control.tscn" id="1_u6r1c"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
 
-[node name="Node2D" parent="." instance=ExtResource("1_nlufs")]
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 133.0
+offset_top = 1.0
+offset_right = 988.0
+offset_bottom = 642.0
+texture = ExtResource("1_n06ov")
+expand_mode = 1
+
+[node name="Control" parent="." instance=ExtResource("1_u6r1c")]
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 1157.0
+offset_bottom = 651.0

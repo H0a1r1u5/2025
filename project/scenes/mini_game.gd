@@ -1,15 +1,19 @@
-extends StaticBody2D
-
-@onready var talkbubble = $talkbubble
+extends Area2D
 @onready var dialogue = $"../dialouge"
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
 
-func _unhandled_input(event):
-	if talkbubble.visible and event.is_action_pressed("interact"):
-		print($Interactable.get_overlapping.bodies())
-		if $"../Player" in $Interactable.get_overlapping_bodies():
-			dialogue.show_dialouge([
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body == $"../Player":
+		dialogue.show_dialouge([
 				{avatar="ghost", text= "“You have wandered into the Dungeon of Memories.”"},
 				{avatar="ghost", text= "This place holds the echoes of what was once yours."},
 				{avatar="Mina", text= "What is this place? Why does it feel… familiar?"},
@@ -22,5 +26,7 @@ func _unhandled_input(event):
 				{avatar="ghost", text= "When each stone is where it belongs… the truth will awaken."},
 			])
 		
+	pass # Replace with function body.
+
 func _physics_process(delta: float)-> void:
 	$talkbubble.visible = $"../Player" in $Interactable.get_overlapping_bodies()

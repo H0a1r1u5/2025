@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fp3ma80ery8v"
-path="res://.godot/imported/Untitled_Artwork.png-e7494ad2b9a80b409c03bf4c5b83628e.ctex"
+uid="uid://blo8nxsaywfoo"
+path="res://.godot/imported/Memory2.png-658868dc9fdb28bd2906dc02f74de8b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mini-game/flags/Untitled_Artwork.png"
-dest_files=["res://.godot/imported/Untitled_Artwork.png-e7494ad2b9a80b409c03bf4c5b83628e.ctex"]
+source_file="res://arts/Drawings/Memory2.png"
+dest_files=["res://.godot/imported/Memory2.png-658868dc9fdb28bd2906dc02f74de8b6.ctex"]
 
 [params]
 

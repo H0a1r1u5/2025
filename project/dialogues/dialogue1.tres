@@ -1,21 +1,50 @@
-[gd_resource type="Resource" script_class="DialogueGroup" load_steps=5 format=3 uid="uid://cnbqn18mjfu6f"]
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=9 format=3 uid="uid://cnbqn18mjfu6f"]
 
 [ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="1_21dv4"]
 [ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="2_6je7j"]
 
 [sub_resource type="Resource" id="Resource_2wo64"]
 script = ExtResource("1_21dv4")
-character_name = "Mina"
-content = "DDDDDDDDDDDD"
+character_name = "Narrater"
+content = "The library chamber dissolves around Mina. She is surrounded by floating golden lights, shimmering pages, and faint echoes of her mother’s voice."
 metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
 
 [sub_resource type="Resource" id="Resource_mk2mc"]
 script = ExtResource("1_21dv4")
-character_name = "Ghost"
-content = "ewaregr"
+character_name = "Mina"
+content = "“Everything I thought I knew… maybe I’ve only seen part of it.”
+"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_21dv4"]
+script = ExtResource("1_21dv4")
+character_name = "Mother (gentle)"
+content = "“I hope one day she understands… all I’ve done is for her. Even when I’m strict, even when I shout… it’s because I want her to have a better life.”
+"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_6je7j"]
+script = ExtResource("1_21dv4")
+character_name = "Mina (thought, tearful):"
+content = "“I… I never realized… all this time, she was doing it for me… not against me.”"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_airvr"]
+script = ExtResource("1_21dv4")
+character_name = "Mina (whispering, emotional):"
+content = "
+ “I understand now… she was always with me, even when it didn’t feel like it. I love her.”
+"
+metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
+
+[sub_resource type="Resource" id="Resource_3yb2m"]
+script = ExtResource("1_21dv4")
+character_name = "Mina (determined, soft smile):"
+content = "“I… need to go back to her. I need to tell her I understand.”
+"
 metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
 
 [resource]
 script = ExtResource("2_6je7j")
-dialogue_list = Array[ExtResource("1_21dv4")]([SubResource("Resource_2wo64"), SubResource("Resource_mk2mc")])
+dialogue_list = Array[ExtResource("1_21dv4")]([SubResource("Resource_2wo64"), SubResource("Resource_mk2mc"), SubResource("Resource_21dv4"), SubResource("Resource_6je7j"), SubResource("Resource_airvr"), SubResource("Resource_3yb2m")])
 metadata/_custom_type_script = "uid://txdqcd5njurm"
