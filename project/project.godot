@@ -18,9 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogue="*res://Scripts/dialogue.gd"
-InteractionManager="*res://interaction/InteractionManager.tscn"
 Music="*res://globals/music.tscn"
 PauseScreen="*res://scenes/pause_screen.tscn"
+InteractionManager="*res://Scripts/interaction_manager.gd"
+G="*res://Scripts/g.gd"
 
 [display]
 
@@ -76,6 +77,7 @@ pause={
 2d_physics/layer_3="groud"
 2d_physics/layer_4="decoration"
 2d_physics/layer_5="Interactable"
+2d_physics/layer_6="book"
 
 [rendering]
 

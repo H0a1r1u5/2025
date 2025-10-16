@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://kvrqjioy0fav"]
+
+[ext_resource type="Script" uid="uid://cpo7ysxq5cner" path="res://Scripts/cell.gd" id="1_rd428"]
+
+[sub_resource type="Gradient" id="Gradient_rkiv6"]
+offsets = PackedFloat32Array(0, 0.005)
+colors = PackedColorArray(0.91664, 0.91664, 0.91664, 1, 0.662452, 0.662452, 0.662452, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rd428"]
+gradient = SubResource("Gradient_rkiv6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ypbm"]
+
+[node name="Cell" type="Area2D" groups=["cell"]]
+script = ExtResource("1_rd428")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 256)
+texture = SubResource("GradientTexture1D_rd428")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8ypbm")

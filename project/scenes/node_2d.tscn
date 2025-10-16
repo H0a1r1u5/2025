@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://t2q8gb5c38gy" path="res://Scripts/dialogue.gd" id="8_x63s8"]
 [ext_resource type="Texture2D" uid="uid://clb3ts3a7xx4k" path="res://arts/Drawings/generic-rpg-ui-text-box.png" id="9_0q20i"]
 [ext_resource type="Texture2D" uid="uid://b7l35ha88hhpb" path="res://arts/Characters/MinaA.png" id="10_qv8l0"]
-[ext_resource type="Texture2D" uid="uid://b0juc4mjbsyje" path="res://arts/flags/chess_07.webp" id="11_08kqv"]
+[ext_resource type="Texture2D" uid="uid://b0juc4mjbsyje" path="res://mini-game/flags/chess_07.webp" id="11_08kqv"]
 [ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://globals/music.tscn" id="16_3kg8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rj586"]

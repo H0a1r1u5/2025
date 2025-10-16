@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qnfv4hn4t66l"]
+[gd_scene load_steps=6 format=3 uid="uid://qnfv4hn4t66l"]
 
 [ext_resource type="Script" uid="uid://bmadqollvapop" path="res://Scripts/book.gd" id="1_3wpgy"]
 [ext_resource type="Texture2D" uid="uid://c71uno4f15dys" path="res://assets/material/bestiary_book/bestiary_03.png" id="1_ble1a"]
@@ -7,12 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wpgy"]
 size = Vector2(8.5, 9.5)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8uccb"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uccb"]
 size = Vector2(27, 27)
 
 [node name="Book" type="Area2D"]
+collision_layer = 16
+collision_mask = 17
 script = ExtResource("1_3wpgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,17 +23,9 @@ texture = ExtResource("1_ble1a")
 position = Vector2(-0.25, 0.25)
 shape = SubResource("RectangleShape2D_3wpgy")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -27.0
-offset_top = -20.0
-offset_right = 31.0
-offset_bottom = -8.0
-scale = Vector2(0.99789, 1)
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxTexture_8uccb")
-text = "            E"
-
 [node name="InteractionArea" parent="." instance=ExtResource("3_8uccb")]
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(1, 1)
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
