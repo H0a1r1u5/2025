@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn1cfvdkovyqg"]
+[gd_scene load_steps=11 format=3 uid="uid://cn1cfvdkovyqg"]
 
 [ext_resource type="Script" uid="uid://d3jr6h3heivub" path="res://Scripts/control.gd" id="1_iggq8"]
+[ext_resource type="Script" uid="uid://bjqpeha2oaa8m" path="res://Scripts/ending.gd" id="1_k7rdy"]
 [ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="2_4jooh"]
+[ext_resource type="AudioStream" uid="uid://dgouqina323e5" path="res://assets/material/Characters/706675__gregorquendel__liszt-liebestraum-no-3-love-dream-arr-for-music-box.wav" id="2_sy8ce"]
 [ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="3_k7rdy"]
 
 [sub_resource type="Resource" id="Resource_sy8ce"]
@@ -35,6 +37,8 @@ dialogue_list = Array[ExtResource("2_4jooh")]([SubResource("Resource_sy8ce"), Su
 metadata/_custom_type_script = "uid://txdqcd5njurm"
 
 [node name="Ending" type="Node2D"]
+script = ExtResource("1_k7rdy")
+bgm = ExtResource("2_sy8ce")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -14.0

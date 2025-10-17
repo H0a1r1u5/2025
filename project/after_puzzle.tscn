@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq7sp0um8p2wr"]
+[gd_scene load_steps=9 format=3 uid="uid://cq7sp0um8p2wr"]
 
 [ext_resource type="Texture2D" uid="uid://crn77s3db3vda" path="res://arts/Drawings/see_puzzle.png" id="1_f2g18"]
+[ext_resource type="Script" uid="uid://biigjrosnngl6" path="res://Scripts/after_puzzle.gd" id="1_o6xqt"]
+[ext_resource type="AudioStream" uid="uid://b3rrqvvan8yu0" path="res://assets/material/Characters/memories.wav" id="2_jwkcf"]
 [ext_resource type="Script" uid="uid://d3jr6h3heivub" path="res://Scripts/control.gd" id="2_wv5mf"]
 [ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="3_o6xqt"]
 [ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="4_jwkcf"]
@@ -17,6 +19,8 @@ dialogue_list = Array[ExtResource("3_o6xqt")]([SubResource("Resource_2lj0o")])
 metadata/_custom_type_script = "uid://txdqcd5njurm"
 
 [node name="After_puzzle" type="Node2D"]
+script = ExtResource("1_o6xqt")
+bgm = ExtResource("2_jwkcf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -3.0
