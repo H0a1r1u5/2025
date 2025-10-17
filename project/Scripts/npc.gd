@@ -7,7 +7,7 @@ extends StaticBody2D
 
 func _unhandled_input(event):
 	if talkbubble.visible and event.is_action_pressed("interact"):
-		print($Interactable.get_overlapping.bodies())
+		print($Interactable.get_overlapping_bodies())
 		if $"../Player" in $Interactable.get_overlapping_bodies():
 			dialogue.show_dialouge([
 				{avatar="ghost", text= "“You have wandered into the Dungeon of Memories.”"},

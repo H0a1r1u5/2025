@@ -6027,7 +6027,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Music" parent="." instance=ExtResource("16_3kg8w")]
 
 [connection signal="body_entered" from="npc/Interactable/CollisionShape2D/Minigame" to="npc/Interactable/CollisionShape2D/Minigame" method="_on_body_entered"]
-[connection signal="body_exited" from="npc/Interactable/CollisionShape2D/Minigame" to="npc/Interactable/CollisionShape2D/Minigame" method="_on_body_exited"]
 [connection signal="visibility_changed" from="dialouge/content" to="dialouge" method="_on_content_visibility_changed"]
 
 [editable path="Player"]
