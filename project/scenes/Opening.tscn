@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b1e3pjfq6o6rm"]
+[gd_scene load_steps=13 format=3 uid="uid://b1e3pjfq6o6rm"]
 
 [ext_resource type="Script" uid="uid://dvwk8j2r4xdhg" path="res://Scripts/opening.gd" id="1_bscq4"]
 [ext_resource type="Texture2D" uid="uid://blvcuvkqqwqwc" path="res://arts/Drawings/Starting.png" id="1_f4vo8"]
@@ -8,8 +8,6 @@
 [ext_resource type="Script" uid="uid://d3jr6h3heivub" path="res://Scripts/control.gd" id="4_f4vo8"]
 [ext_resource type="Texture2D" uid="uid://bgkyb76tgiak2" path="res://arts/Drawings/open_door.png" id="4_kkuo2"]
 [ext_resource type="Texture2D" uid="uid://cvb62qriy8hni" path="res://arts/Drawings/go_out.png" id="5_3jlq0"]
-[ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="5_onevj"]
-[ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="6_q1kfr"]
 
 [sub_resource type="Animation" id="Animation_3jlq0"]
 length = 0.001
@@ -125,54 +123,6 @@ _data = {
 &"show_overlay3_4": SubResource("Animation_kkuo2")
 }
 
-[sub_resource type="Resource" id="Resource_kkuo2"]
-script = ExtResource("5_onevj")
-character_name = ""
-content = "(The screen fades in. A dimly lit living room. The sound of rain outside. Mina and her mother stand facing each other.)"
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_3jlq0"]
-script = ExtResource("5_onevj")
-character_name = "Mother(Angery):"
-content = " Mina, I’ve told you a hundred times—stop wasting your time with those drawings! You need to think about your future."
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_bscq4"]
-script = ExtResource("5_onevj")
-character_name = "Mina (defensive):"
-content = " It’s not a waste of time! Drawing is the only thing that makes me feel alive. Why can’t you understand that?"
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_4jluf"]
-script = ExtResource("5_onevj")
-character_name = "Mother (snapping):"
-content = " Because the real world doesn’t care about your silly dreams! You’re just being selfish."
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_ou25h"]
-script = ExtResource("5_onevj")
-character_name = "Mina (voice rising):"
-content = " Selfish? You never listen to me! All you do is shout and tell me what I can’t do. Maybe I don’t want the life you chose for me!"
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_gjmvi"]
-script = ExtResource("5_onevj")
-character_name = "Mina (quiet, hurt):"
-content = " I can’t stay here anymore.
-"
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_jfxrs"]
-script = ExtResource("5_onevj")
-character_name = "Narration (Mina’s thoughts):"
-content = " I don’t care where I go. I just need to get away. Away from her voice… away from this house… away from everything."
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_2t5jm"]
-script = ExtResource("6_q1kfr")
-dialogue_list = Array[ExtResource("5_onevj")]([SubResource("Resource_kkuo2"), SubResource("Resource_3jlq0"), SubResource("Resource_bscq4"), SubResource("Resource_4jluf"), SubResource("Resource_ou25h"), SubResource("Resource_gjmvi"), SubResource("Resource_jfxrs")])
-metadata/_custom_type_script = "uid://txdqcd5njurm"
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bscq4")
 bgm = ExtResource("2_4jluf")
@@ -239,7 +189,7 @@ offset_bottom = 690.0
 texture = ExtResource("5_3jlq0")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("character_name_text", "text_box")]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 212.0
@@ -249,9 +199,6 @@ offset_bottom = 620.0
 scale = Vector2(1.06211, 1.28573)
 size_flags_horizontal = 4
 script = ExtResource("4_f4vo8")
-character_name_text = NodePath("Panel/MarginContainer/VBoxContainer/Name")
-text_box = NodePath("Panel/MarginContainer/VBoxContainer/Content")
-main_dialogue = SubResource("Resource_2t5jm")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1

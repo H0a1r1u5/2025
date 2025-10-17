@@ -1,22 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq7sp0um8p2wr"]
+[gd_scene load_steps=5 format=3 uid="uid://cq7sp0um8p2wr"]
 
 [ext_resource type="Texture2D" uid="uid://crn77s3db3vda" path="res://arts/Drawings/see_puzzle.png" id="1_f2g18"]
 [ext_resource type="Script" uid="uid://biigjrosnngl6" path="res://Scripts/after_puzzle.gd" id="1_o6xqt"]
 [ext_resource type="AudioStream" uid="uid://b3rrqvvan8yu0" path="res://assets/material/Characters/memories.wav" id="2_jwkcf"]
 [ext_resource type="Script" uid="uid://d3jr6h3heivub" path="res://Scripts/control.gd" id="2_wv5mf"]
-[ext_resource type="Script" uid="uid://dtpuy1fwyymfq" path="res://Scripts/Dialogue2.gd" id="3_o6xqt"]
-[ext_resource type="Script" uid="uid://txdqcd5njurm" path="res://Scripts/dialogue_group.gd" id="4_jwkcf"]
-
-[sub_resource type="Resource" id="Resource_2lj0o"]
-script = ExtResource("3_o6xqt")
-character_name = ""
-content = " “This chamber holds the fragments of a life… pieces of memory left behind. Only by reassembling them can the truth be revealed.”"
-metadata/_custom_type_script = "uid://dtpuy1fwyymfq"
-
-[sub_resource type="Resource" id="Resource_grd11"]
-script = ExtResource("4_jwkcf")
-dialogue_list = Array[ExtResource("3_o6xqt")]([SubResource("Resource_2lj0o")])
-metadata/_custom_type_script = "uid://txdqcd5njurm"
 
 [node name="After_puzzle" type="Node2D"]
 script = ExtResource("1_o6xqt")
@@ -37,7 +24,7 @@ offset_bottom = 613.0
 texture = ExtResource("1_f2g18")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("character_name_text", "text_box")]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 212.0
@@ -47,9 +34,6 @@ offset_bottom = 620.0
 scale = Vector2(1.06211, 1.28573)
 size_flags_horizontal = 4
 script = ExtResource("2_wv5mf")
-character_name_text = NodePath("Panel/MarginContainer/VBoxContainer/Name")
-text_box = NodePath("Panel/MarginContainer/VBoxContainer/Content")
-main_dialogue = SubResource("Resource_grd11")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
@@ -101,5 +85,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "dWEFWEF"
 autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="gui_input" from="Control/Panel/MarginContainer" to="Control" method="_on_click"]
