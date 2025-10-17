@@ -1,119 +1,117 @@
 @tool
 extends Resource
-#to create this resource
+# Resource to store slot placements and connections
 class_name H2AConfig
 
-# Enum declaration
+# Enum for different types of slots
 enum Slot { NULL, TIME, SUN, FISH, HILL, CROSS, CHOICE }
 
-# Real backing data
-var placements: PackedInt32Array = PackedInt32Array() # Stores which enum is placed in each slot
-var connections:= {} # Dictionary for slot
+# Array to store which type is in each slot
+var placements: PackedInt32Array = PackedInt32Array()
 
-#similar to func _ready():
+# Dictionary to store connections between slots
+var connections := {}
+
+# Initialize default values for placements and connections
 func _init():
-	#one entry for each slot
-	placements.resize(Slot.size())
-	# Default all to NULL
-	placements.fill(Slot.NULL)
-	
+	placements.resize(Slot.size())  # One entry per slot
+	placements.fill(Slot.NULL)      # Default all to NULL
 	for slot in Slot.values():
-		connections[slot] = []
-	
+		connections[slot] = []      # Initialize empty connections
 
-# → A Godot function that tells the Inspector what properties to display and how.
+# Tell the editor which properties to show and how
 func _get_property_list() -> Array:
 	var properties: Array = [
 		{
 			"name": "placements",
-			"type": TYPE_PACKED_INT32_ARRAY,#e.g. it’s a PackedInt32Array
-			"usage": PROPERTY_USAGE_STORAGE,
+			"type": TYPE_PACKED_INT32_ARRAY,
+			"usage": PROPERTY_USAGE_STORAGE
 		},
-		{ 
+		{
 			"name": "connections",
 			"type": TYPE_DICTIONARY,
-			"usage": PROPERTY_USAGE_STORAGE,
-		},
+			"usage": PROPERTY_USAGE_STORAGE
+		}
 	]
+
+	# Prepare dropdown options for placements
 	var options := PackedStringArray(Slot.keys())
-	var options_str :=",".join(options)
+	var options_str := ",".join(options)
+
+	# Add a property for each slot placement
 	for slot in range(1, Slot.size()):
 		properties.append({
 			"name": "placements/" + Slot.keys()[slot],
 			"type": TYPE_INT,
 			"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE,
-			"hint": PROPERTY_HINT_ENUM,#limit
-			"hint_string":options_str,
-			
+			"hint": PROPERTY_HINT_ENUM,
+			"hint_string": options_str
 		})
-		#loops through all slot indices except the very last one
+
+	# Add properties for connections as checkboxes
 	for slot in Slot.size() - 1:
-		#creating the list of possible connection targets for the current slot.
 		var available := PackedStringArray()
-		# the variable holding the index
-		#slot index= no. represent where the slot is in the array
 		for dst in Slot.size():
 			if dst <= slot:
 				available.append("")
 			else:
-				#creates a list of names in inspetot
 				available.append(Slot.keys()[dst])
-				#Turns the list of strings into a singled strings.
 		var available_str := ",".join(available)
+
 		properties.append({
-			"name": "connections/" + Slot.keys()[slot],#e.g., "connections/SUN"
+			"name": "connections/" + Slot.keys()[slot],
 			"type": TYPE_INT,
-			"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE,# editable in the editor
-			"hint": PROPERTY_HINT_FLAGS,# show this integer as multiple checkboxes.
-			"hint_string":available_str,
-			
+			"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE,
+			"hint": PROPERTY_HINT_FLAGS,
+			"hint_string": available_str
 		})
+
 	return properties
 
+# Return the value of a property for the editor or script
 func _get(property):
-		if property.begins_with("placements/"):
-			property = property.trim_prefix("placements/")
-			var index := int(Slot[property])
-			return placements[index]
-		
-		if property.begins_with("connections/"):
-			property = property.trim_prefix("connections/")#
-			var index := int(Slot[property])
-			var value := 0
-			for dst in range(index + 1,Slot.size()):
-				if dst in connections[index]:
-					value |= (1<<dst)
-			return value
-			
-		return null
-	
-	
+	if property.begins_with("placements/"):
+		property = property.trim_prefix("placements/")
+		var index := int(Slot[property])
+		return placements[index]
+
+	if property.begins_with("connections/"):
+		property = property.trim_prefix("connections/")
+		var index := int(Slot[property])
+		var value := 0
+		for dst in range(index + 1, Slot.size()):
+			if dst in connections[index]:
+				value |= (1 << dst)
+		return value
+
+	return null
+
+# Update a property when changed in the editor or via code
 func _set(property, value):
-		if property.begins_with("placements/"): 
-			#"placements/TIME" becomes "TIME"
-			property = property.trim_prefix("placements/")
-			var index := int(Slot[property])
-			placements[index] = value
-			emit_changed()
-			return true
-			
-		if property.begins_with("connections/"):
-			property = property.trim_prefix("connections/")
-			var index := int(Slot[property])
-			for dst in range(index + 1, Slot.size()):
-				_set_connected(index, dst, value & (1 << dst) != 0)
-			emit_changed()
-			return true
-			
-		return false
-		
+	if property.begins_with("placements/"):
+		property = property.trim_prefix("placements/")
+		var index := int(Slot[property])
+		placements[index] = value
+		emit_changed()
+		return true
+
+	if property.begins_with("connections/"):
+		property = property.trim_prefix("connections/")
+		var index := int(Slot[property])
+		for dst in range(index + 1, Slot.size()):
+			_set_connected(index, dst, value & (1 << dst) != 0)
+		emit_changed()
+		return true
+
+	return false
+
+# Internal helper to add/remove bidirectional connections
 func _set_connected(src: int, dst: int, connected: bool):
-	# Get the list of connections for the source slot
 	var src_arr := connections[src] as Array
-	 # Get the list of connections for the destination slot
 	var dst_arr := connections[src] as Array
 	var src_idx := src_arr.find(dst)
 	var dst_idx := dst_arr.find(src)
+
 	if connected:
 		if src_idx == -1:
 			src_arr.append(dst)

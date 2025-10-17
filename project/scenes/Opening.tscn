@@ -300,4 +300,5 @@ theme_override_font_sizes/font_size = 18
 text = "dWEFWEF"
 autowrap_mode = 3
 
+[connection signal="animation_finished" from="AnimationPlayer" to="Control" method="_on_animation_player_animation_finished"]
 [connection signal="gui_input" from="Control/Panel/MarginContainer" to="Control" method="_on_click"]
