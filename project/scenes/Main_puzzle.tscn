@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bm62dkpkqoq0a"]
+[gd_scene load_steps=15 format=3 uid="uid://bm62dkpkqoq0a"]
 
 [ext_resource type="Script" uid="uid://cd1uf1qlshiuk" path="res://Scripts/main_puzzle.gd" id="1_qdaoj"]
 [ext_resource type="Texture2D" uid="uid://by8nuw64hjycg" path="res://images/1.png" id="2_47iuc"]
@@ -13,9 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bl4er5e1epiqt" path="res://images/10.png" id="11_1i1m4"]
 [ext_resource type="Texture2D" uid="uid://35pvs2f5kt3g" path="res://images/11.png" id="12_6aw8c"]
 [ext_resource type="Texture2D" uid="uid://2wsy7rhcepf7" path="res://images/12.png" id="13_mrgp6"]
+[ext_resource type="AudioStream" uid="uid://dgouqina323e5" path="res://assets/material/Characters/706675__gregorquendel__liszt-liebestraum-no-3-love-dream-arr-for-music-box.wav" id="14_r1r8y"]
 
 [node name="MainPuzzle" type="Node2D"]
 script = ExtResource("1_qdaoj")
+bgm = ExtResource("14_r1r8y")
 
 [node name="cell" type="Node2D" parent="."]
 
