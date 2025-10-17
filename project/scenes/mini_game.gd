@@ -1,18 +1,27 @@
 extends Area2D
 
-@onready var talkbubble = $"../../../talkbubble"
-@onready var player = $"../Player"
+@onready var talk_bubble = $talkbubble
+@export var next_scene_path: String = "res://mini-game/Backgroud.tscn"
 
-@export var next_scene_path: String = "res://scenes/next_level.tscn"
+var player_near := false
+
+func _ready():
+	talk_bubble.visible = false
+
+# This is your function name from the signal
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		player_near = true
+		talk_bubble.visible = true
+		print("Player entered")
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == "Player":
+		player_near = false
+		talk_bubble.visible = false
+		print("Player exited")
 
 func _unhandled_input(event):
-	# Only respond if bubble is visible (player is nearby)
-	if talkbubble.visible and event.is_action_pressed("interact"):
-		# Check if the player is in range
-		if $"../Player" in $CollisionShape2D.get_overlapping_bodies():
-			print("Player interacted — changing scene...")
-			get_tree().change_scene_to_file("res://mini-game/Backgroud.tscn")
-
-func _physics_process(delta: float) -> void:
-	# Show the bubble only when the player is overlapping the interactable
-	$talkbubble.visible = $"../Player" in $CollisionShape2D.get_overlapping_bodies()
+	if player_near and event.is_action_pressed("interact"):
+		print("Changing scene...")
+		get_tree().change_scene_to_file(next_scene_path)
