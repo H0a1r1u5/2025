@@ -81,7 +81,7 @@ func _request_move(stone:H2AStone):
 
 	for s in _stone_map.values():
 		available.erase(s.current_slot)
-	assert(available.size() == 1)
+	assert(available.size() == 1) # runs only if condition
 	var available_slot := available.front() as int
 	_move_stone(stone,available_slot)
 
@@ -91,7 +91,7 @@ func _move_stone(stone: H2AStone, slot: int):
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(stone, "position", _get_slot_position(slot), 0.2)
 	tween.tween_interval(1.0)  # waits for 1 second before callback
-	tween.tween_callback(Callable(self, "_check"))  # correct Godot 4 syntax
+	tween.tween_callback(Callable(self, "_check"))  
 
 	# Update the stone’s logical position
 	stone.current_slot = slot
@@ -101,7 +101,7 @@ func _check():
 	for stone in _stone_map.values():
 		if stone.current_slot != stone.target_slot:
 			return
-	# Make sure "Game" is the correct global name; change if needed (e.g. Global, GameManager)
+	
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 

@@ -23,3 +23,4 @@ func _on_animation_finished(anim_name: String):
 	# Only change scene after final overlay animation finishes
 	if pending_scene_change and anim_name == "show_overlay3_4":
 		get_tree().change_scene_to_file("res://scenes/node_2d.tscn")
+	print("change")
