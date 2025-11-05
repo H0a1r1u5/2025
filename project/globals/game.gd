@@ -1,7 +1,7 @@
 extends Node
 
-const SAVE_PATH := "user://data.sav"
-const CONFIG_PATH := "user://config.ini"
+const SAVE_PATH := "user://data.sav" # Archive file path
+const CONFIG_PATH := "user://config.ini" # Configuration file path
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,16 +27,17 @@ func change_scene(path: String, entry_point: String) -> void:
 func has_save() -> bool:
 	return FileAccess.file_exists(SAVE_PATH)
 
-func save_config() -> void:
+func save_config() -> void: # Save volume settings
 	var config := ConfigFile.new()
 	
+	# Save volume settings
 	config.set_value("audio", "master", Music.get_volume(Music.Bus.MASTER))
 	config.set_value("audio", "sfx", Music.get_volume(Music.Bus.SFX))
 	config.set_value("audio", "bgm", Music.get_volume(Music.Bus.BGM))
 	
 	config.save(CONFIG_PATH)
 
-func load_config() -> void:
+func load_config() -> void: # Load volume configuration
 	var config := ConfigFile.new()
 	config.load(CONFIG_PATH)
 	
@@ -44,7 +45,7 @@ func load_config() -> void:
 		Music.Bus.MASTER,
 		config.get_value("audio","master", 0.5)
 	)
-	
+	# Reads and applies volume settings; the default value is 0.5 or 1.0
 	Music.set_volume(
 		Music.Bus.MASTER,
 		config.get_value("audio","sfx", 1.0)

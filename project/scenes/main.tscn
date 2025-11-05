@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b1gvoamnyfe12"]
+[gd_scene load_steps=17 format=4 uid="uid://b1gvoamnyfe12"]
 
 [ext_resource type="Script" uid="uid://bxi0yj24dwu2o" path="res://Scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://c45g8pb26p6ti" path="res://assets/material/Characters/TopDownHouse_FloorsAndWalls.png" id="1_sugp2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://csmfydnvep2cs" path="res://globals/music.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://qnfv4hn4t66l" path="res://scenes/book.tscn" id="6_o6xl0"]
 [ext_resource type="Script" uid="uid://rliavyk68jfs" path="res://Scripts/interaction_manager.gd" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://ct4dsvljgeq4q" path="res://scenes/pause_screen.tscn" id="9_85g3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 texture = ExtResource("1_sugp2")
@@ -361,3 +362,6 @@ offset_bottom = 23.0
 text = "[E]"
 
 [node name="Music" parent="." instance=ExtResource("5_tbgi4")]
+
+[node name="PauseScreen" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_85g3d")]
+player = NodePath("../TileLayers/player")

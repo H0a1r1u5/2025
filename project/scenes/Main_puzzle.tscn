@@ -170,10 +170,10 @@ pivot_offset = Vector2(370, 208)
 texture = ExtResource("3_r1r8y")
 
 [node name="TextureRect3" type="TextureRect" parent="piece"]
-offset_left = 506.0
-offset_top = -1302.0
-offset_right = 1247.0
-offset_bottom = -885.0
+offset_left = 601.0
+offset_top = -1173.0
+offset_right = 1342.0
+offset_bottom = -756.0
 pivot_offset = Vector2(370, 208)
 texture = ExtResource("4_j75ti")
 
@@ -194,18 +194,18 @@ pivot_offset = Vector2(370, 208)
 texture = ExtResource("6_47tdb")
 
 [node name="TextureRect6" type="TextureRect" parent="piece"]
-offset_left = 1055.0
-offset_top = -689.0
-offset_right = 1796.0
-offset_bottom = -272.0
+offset_left = 1094.0
+offset_top = -683.0
+offset_right = 1835.0
+offset_bottom = -266.0
 pivot_offset = Vector2(370, 208)
 texture = ExtResource("7_x7qwr")
 
 [node name="TextureRect7" type="TextureRect" parent="piece"]
-offset_left = -2401.0
-offset_top = -102.0
-offset_right = -1660.0
-offset_bottom = 315.0
+offset_left = -2182.0
+offset_top = -68.0
+offset_right = -1441.0
+offset_bottom = 349.0
 pivot_offset = Vector2(370, 208)
 texture = ExtResource("8_lufhb")
 

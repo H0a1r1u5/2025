@@ -1,20 +1,27 @@
 extends Node2D
 
+# Scene configuration variables
 @export var next_scene_path: String = "res://after_puzzle.tscn"
 @export var bgm: AudioStream
+#An array storing all grid nodes, used for puzzle piece placement detection
 @onready var  arr = [$cell/TextureRect, $cell/TextureRect2, $cell/TextureRect3, $cell/TextureRect4, $cell/TextureRect5, $cell/TextureRect6, $cell/TextureRect7, $cell/TextureRect8, $cell/TextureRect9, $cell/TextureRect10, $cell/TextureRect11, $cell/TextureRect12]
 # @export var list : Array[Texture]
 
 func _ready() -> void:
 	for node in arr:
-		node.set_meta("WhetherOccupied",false)
+		node.set_meta("WhetherOccupied",false) ## Initialize the occupancy status of each cell to false
+		# Add drag and touch events to each puzzle piece
 	for node: TextureRect in $piece .get_children():
+		# Drag and drop puzzle pieces
 		node.gui_input.connect(func(event: InputEvent):
 			if(event is InputEventScreenDrag):
 				node.global_position += event.relative
+			
+			# Check if the puzzle piece is placed in the correct cell when placing it
 			if event is InputEventScreenTouch:
 				if !event.pressed:
 					for cell in arr:
+						# If a puzzle piece is close to an empty cell, place it on the cell
 						print(cell.get_meta("WhetherOccupied"))
 						print(cell.global_position.distance_to(node.global_position))
 						if cell.global_position.distance_to(node.global_position) < 300 and !cell.get_meta("WhetherOccupied", false):

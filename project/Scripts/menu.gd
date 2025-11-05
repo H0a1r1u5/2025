@@ -10,7 +10,7 @@ func _on_exit_pressed() -> void:
 
 func _on_setting_pressed() -> void:
 	# Open a settings scene (optional)
-	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	get_tree().change_scene_to_file("res://scenes/pause_screen.tscn")
 
 func _on_about_pressed() -> void:
 	# Open an about/credits scene (optional)
